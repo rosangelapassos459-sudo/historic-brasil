@@ -1,133 +1,326 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brasil Mundo Experiências</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Brasil Mundo Experiências — Turismo & Roteiros</title>
+  <meta name="description" content="Brasil Mundo Experiências — roteiros, destinos e experiências pelo Brasil e pelo mundo. Atendimento personalizado via WhatsApp." />
+  <meta name="theme-color" content="#0b5aa6" />
 
   <style>
-    body {
-      margin: 0;
-      background: #f5f6fa;
-      font-family: Arial, sans-serif;
+    :root{
+      --blue:#0b5aa6;
+      --yellow:#ffd24a;
+      --deep:#063b63;
+      --muted:#f5f6fa;
+      --card:#ffffff;
+      --accent:#06b84a;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--muted);
+      color:#222;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.4;
     }
 
-    /* Cabeçalho */
-    header {
-      background: linear-gradient(90deg, #0033a0, #0077ff);
-      padding: 20px 0;
-      text-align: center;
-      color: white;
-      font-size: 26px;
-      font-weight: bold;
+    /* Header / Nav */
+    .topbar{
+      background:linear-gradient(90deg,var(--blue),#0f77cf);
+      color:#fff;
+      padding:28px 16px 12px;
+      text-align:center;
+    }
+    .brand{
+      font-size:26px;
+      font-weight:700;
+      letter-spacing:0.4px;
+      margin:0;
+    }
+    .nav{
+      display:flex;
+      justify-content:center;
+      gap:18px;
+      padding:10px 12px;
+      background:var(--yellow);
+      color:var(--deep);
+      box-shadow:0 2px 6px rgba(0,0,0,0.08);
+      position:sticky;
+      top:0;
+      z-index:20;
+    }
+    .nav a{ color:var(--deep); text-decoration:none; font-weight:700 }
+    .container{ max-width:1100px; margin:0 auto; padding:22px; }
+
+    /* Hero */
+    .hero{
+      background:linear-gradient(180deg, rgba(11,90,166,0.06), transparent);
+      border-radius:16px;
+      padding:28px;
+      display:flex;
+      gap:20px;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:18px;
+    }
+    .hero .left{flex:1}
+    .hero h1{margin:0; font-size:28px; color:var(--deep)}
+    .hero p{margin:10px 0 0; color:#333}
+    .cta{
+      margin-top:14px;
+      display:inline-block;
+      background:var(--blue);
+      color:#fff;
+      padding:10px 16px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:700;
     }
 
-    /* Menu */
-    nav {
-      background: #f1c40f;
-      display: flex;
-      justify-content: center;
-      padding: 10px;
-      gap: 25px;
-      font-size: 18px;
-      font-weight: bold;
+    /* cards */
+    .grid{display:grid; gap:16px; grid-template-columns:repeat(1,1fr)}
+    @media(min-width:780px){ .grid{ grid-template-columns:repeat(3,1fr)} .hero{padding:36px} .hero h1{font-size:34px} }
+
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      padding:18px;
+      box-shadow:0 6px 18px rgba(16,24,40,0.06);
+    }
+    .card h3{margin:0 0 6px}
+    .card p{margin:0 0 10px; color:#444}
+
+    /* Destinos list */
+    .list{display:flex;flex-direction:column;gap:12px}
+    .item{display:flex;gap:12px;align-items:flex-start}
+    .thumb{
+      width:84px;height:64px;border-radius:8px;background:linear-gradient(45deg,#f7c948,#f0767b);
+      flex:0 0 84px;
+      display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;
     }
 
-    nav a {
-      color: #1a1a1a;
-      text-decoration: none;
+    /* Contact */
+    .contact{
+      display:grid;gap:12px;
+      grid-template-columns:1fr; margin-top:6px;
+    }
+    @media(min-width:720px){ .contact{grid-template-columns:1fr 360px} }
+
+    .form{
+      display:flex;flex-direction:column;gap:10px;
+    }
+    .form input,.form textarea{
+      padding:10px;border-radius:8px;border:1px solid #e3e7ee;font-size:15px;
+    }
+    .btn{
+      background:var(--deep);color:#fff;padding:10px 12px;border-radius:8px;border:none;font-weight:700;
+      cursor:pointer;
     }
 
-    /* Card central */
-    .box {
-      background: white;
-      max-width: 900px;
-      margin: 25px auto;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.1);
-      text-align: center;
+    footer{
+      margin-top:28px;padding:28px;color:#fff;background:linear-gradient(90deg,var(--blue),#0f77cf);
+      border-radius:12px;
+      text-align:center;
     }
 
-    .box h1 {
-      font-size: 30px;
-      color: #333;
+    /* Floating WhatsApp */
+    .whats{
+      position:fixed;right:16px;bottom:16px;background:#25d366;padding:12px 14px;border-radius:999px;color:#fff;
+      box-shadow:0 8px 20px rgba(0,0,0,0.2);display:flex;gap:10px;align-items:center;text-decoration:none;font-weight:700;z-index:60;
     }
 
-    .box p {
-      font-size: 18px;
-      color: #444;
-      line-height: 1.6;
-    }
+    /* small helpers */
+    .muted{color:#666;font-size:14px}
+    .section-title{font-size:20px;margin:0 0 12px;color:var(--deep);font-weight:700}
+    .badge{background:var(--yellow);padding:6px 10px;border-radius:999px;font-weight:700;color:var(--deep)}
+    .center{display:flex;align-items:center;justify-content:center}
 
-    /* Rodapé */
-    footer {
-      background: #0033a0;
-      color: white;
-      text-align: center;
-      padding: 20px 10px;
-      margin-top: 40px;
-    }
+    /* accessibility focus */
+    a:focus, button:focus, input:focus, textarea:focus { outline:3px solid rgba(11,90,166,0.15); outline-offset:3px }
 
-    footer p {
-      margin: 8px 0;
-      font-size: 16px;
-    }
-
-    /* Botão WhatsApp */
-    .whats-btn {
-      background: #25d366;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 30px;
-      font-size: 18px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      margin-top: 10px;
-    }
   </style>
-
 </head>
 <body>
-
-  <!-- Cabeçalho -->
   <header>
-    Brasil Mundo Experiências
+    <div class="topbar">
+      <div class="container">
+        <h1 class="brand">Brasil Mundo Experiências</h1>
+        <div class="muted" style="margin-top:8px">Roteiros, destinos e experiências personalizados</div>
+      </div>
+    </div>
+
+    <nav class="nav" role="navigation" aria-label="Menu principal">
+      <a href="#brasil">Brasil</a>
+      <a href="#mundo">Mundo</a>
+      <a href="#experiencias">Experiências</a>
+      <a href="#contato">Contato</a>
+    </nav>
   </header>
 
-  <!-- Menu -->
-  <nav>
-    <a href="#">Brasil</a>
-    <a href="#">Mundo</a>
-    <a href="#">Experiências</a>
-    <a href="#">Contato</a>
-  </nav>
+  <main class="container" id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="left">
+        <h1 id="hero-title">Bem-vindo(a) ao Brasil Mundo Experiências 💛</h1>
+        <p>Chegou o lugar para planejar viagens especiais — roteiros feitos com carinho, atendimento por WhatsApp e dicas locais para você viver o melhor de cada destino.</p>
+        <a class="cta" href="https://wa.me/5511914928585?text=Olá!%20Quero%20saber%20sobre%20seus%20roteiros" aria-label="Chamar no WhatsApp">Me chama no WhatsApp</a>
+      </div>
+      <div style="flex:0 0 250px; text-align:right;">
+        <div class="card" style="background:linear-gradient(180deg,#fff,#fbfdff);">
+          <strong>Contato direto</strong>
+          <div style="margin-top:8px" class="muted">WhatsApp</div>
+          <div style="margin-top:6px; font-weight:800;">+55 11 91492-8585</div>
+          <div style="margin-top:10px"><small class="muted">Atendimento especial e personalizado</small></div>
+        </div>
+      </div>
+    </section>
 
-  <!-- Conteúdo principal -->
-  <div class="box">
-    <h1>Bem-vindo(a)! 💛</h1>
-    <p>
-      O site <strong>Brasil Mundo Experiências</strong> está nascendo com muito carinho
-      para trazer as melhores viagens, destinos e roteiros incríveis do Brasil e do Mundo 🌎✨
-    </p>
-    <p>
-      Em breve muitas novidades estarão disponíveis aqui 💛✨✈️
-    </p>
-  </div>
+    <!-- SEÇÃO BRASIL -->
+    <section id="brasil" class="card" aria-labelledby="br-title" style="margin-bottom:18px">
+      <h2 id="br-title" class="section-title">Destinos mais procurados no Brasil</h2>
+      <p class="muted">Selecionei alguns dos destinos que turistas mais buscam — cada um com roteiro e dicas locais.</p>
 
-  <!-- Rodapé -->
-  <footer>
-    <p>🌼 Seu atendimento é especial! Fale comigo no WhatsApp:</p>
-    <p><strong>+55 11 91492-8585</strong></p>
+      <div class="grid" style="margin-top:12px">
+        <div class="card">
+          <h3>Chapada Diamantina</h3>
+          <p>Trilhas, cachoeiras e paisagens únicas. Ideal para ecoturismo e aventura.</p>
+          <div class="muted">Dicas: leve sapato de trilha, procure guias locais.</div>
+        </div>
 
-    <a class="whats-btn" href="https://wa.me/5511914928585" target="_blank">
-      💬 WhatsApp
-    </a>
+        <div class="card">
+          <h3>Fernando de Noronha</h3>
+          <p>Praias de águas cristalinas, mergulho e preservação marinha.</p>
+          <div class="muted">Dicas: taxa de preservação e limite de visitantes; reserve com antecedência.</div>
+        </div>
 
-    <p style="margin-top: 15px;">💛 Brasil Mundo Experiências — Rosângela Passos</p>
-  </footer>
+        <div class="card">
+          <h3>Lençóis Maranhenses</h3>
+          <p>Dunas e lagoas de água doce — paisagens surreais e fotos incríveis.</p>
+          <div class="muted">Dicas: combine com passeio de barco pelo Rio Preguiças.</div>
+        </div>
+      </div>
+    </section>
 
+    <!-- SEÇÃO MUNDO -->
+    <section id="mundo" class="card" aria-labelledby="world-title" style="margin-bottom:18px">
+      <h2 id="world-title" class="section-title">Destinos internacionais em alta</h2>
+      <p class="muted">Sugestões populares para brasileiros viajarem ao exterior — desde cidades vibrantes até ilhas paradisíacas.</p>
+
+      <div class="grid" style="margin-top:12px">
+        <div class="card">
+          <h3>Portugal</h3>
+          <p>Roteiros históricos, gastronomia e excelente custo-benefício para quem busca Europa.</p>
+        </div>
+
+        <div class="card">
+          <h3>Estados Unidos (Miami / Orlando)</h3>
+          <p>Praias, compras e parques temáticos — ótimo para família e compras.</p>
+        </div>
+
+        <div class="card">
+          <h3>Tailândia</h3>
+          <p>Praias tropicais, cultura rica e gastronomia exótica — ideal para quem quer aventura internacional.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIÊNCIAS -->
+    <section id="experiencias" class="card" aria-labelledby="exp-title" style="margin-bottom:18px">
+      <h2 id="exp-title" class="section-title">Experiências & Serviços</h2>
+      <div class="grid" style="margin-top:12px">
+        <div class="card">
+          <h3>Roteiros personalizados</h3>
+          <p>Montamos pacotes sob medida — hospedagem, transporte e passeios com curadoria local.</p>
+        </div>
+        <div class="card">
+          <h3>Consultoria de viagem</h3>
+          <p>Orientação sobre vistos, seguros, melhores épocas e roteiros por interesse.</p>
+        </div>
+        <div class="card">
+          <h3>Experiências locais</h3>
+          <p>Passeios exclusivos com guias e vivências culturais autênticas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="card" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="section-title">Contato</h2>
+      <div class="contact">
+        <div>
+          <p class="muted">Envie uma mensagem rápida ou chame no WhatsApp — respondo com carinho.</p>
+          <div style="margin-top:12px" class="list">
+            <div class="item">
+              <div class="thumb">☎️</div>
+              <div>
+                <strong>WhatsApp</strong>
+                <div class="muted">+55 11 91492-8585</div>
+                <div style="margin-top:8px"><a class="cta" href="https://wa.me/5511914928585?text=Olá%20Rosângela!%20Quero%20saber%20sobre%20seus%20roteiros" aria-label="Chamar no WhatsApp">Chamar agora</a></div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="thumb">📧</div>
+              <div>
+                <strong>Email</strong>
+                <div class="muted">rosangelapassos@example.com</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card" style="align-self:start">
+          <form class="form" action="mailto:rosangelapassos@example.com" method="post" enctype="text/plain">
+            <label for="name">Seu nome</label>
+            <input id="name" name="Nome" placeholder="Ex: Maria" required>
+            <label for="email">Email</label>
+            <input id="email" name="Email" placeholder="seu@email.com" type="email" required>
+            <label for="msg">Mensagem</label>
+            <textarea id="msg" name="Mensagem" rows="5" placeholder="Vou viajar em..." required></textarea>
+            <button class="btn" type="submit">Enviar por email</button>
+          </form>
+          <div style="margin-top:12px" class="muted">Ou clique em <strong>Chamar agora</strong> para falar direto no WhatsApp.</div>
+        </aside>
+      </div>
+    </section>
+
+    <footer role="contentinfo">
+      <div style="max-width:900px;margin:0 auto;">
+        <div style="font-weight:700;font-size:18px">💛 Seu atendimento é especial</div>
+        <div style="margin-top:8px" class="muted">Me chama no WhatsApp: <strong>+55 11 91492-8585</strong></div>
+        <div style="margin-top:10px" class="muted">© Brasil Mundo Experiências — Rosângela Passos</div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Floating WhatsApp button -->
+  <a class="whats" href="https://wa.me/5511914928585?text=Olá%20Rosângela!%20Quero%20mais%20informações" aria-label="Chame no WhatsApp" target="_blank" rel="noopener">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true" style="flex:0 0 18px"><path d="M20.5 3.5A11 11 0 0 0 3.5 20.5L2 22l1.5-3.5A11 11 0 1 0 20.5 3.5zM12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18z" /></svg>
+    WhatsApp
+  </a>
+
+  <script>
+    // smooth scroll for anchor links
+    (function(){
+      const links = document.querySelectorAll('a[href^="#"]');
+      for(const a of links){
+        a.addEventListener('click', function(e){
+          const href = this.getAttribute('href');
+          if(href === "#") return;
+          const el = document.querySelector(href);
+          if(el){
+            e.preventDefault();
+            window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 70, behavior: 'smooth' });
+            // Update focus for accessibility
+            el.setAttribute('tabindex','-1');
+            el.focus({preventScroll:true});
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
