@@ -1,0 +1,21 @@
+{
+  "name": "Brasil & Mundo — Turismo e Experiências",
+  "short_name": "BM Turismo",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#00c853",
+  "icons": [
+    {
+      "src": "https://i.imgur.com/MZfbP2E.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.imgur.com/MZfbP2E.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
