@@ -1,136 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Brasil & Mundo — Turismo e Experiências</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brasil & Mundo – Turismo e Experiências</title>
+
+  <link rel="manifest" href="manifest.json">
 
   <style>
-    :root{
-      --bg:#0b0b0c;
-      --card:#131315;
-      --text:#e8e6e3;
-      --muted:#b8b3ab;
-      --accent:#2fbf71;
-      --accent2:#1f9e5c;
-      --radius:14px;
-      --max:1200px;
+    body {
+      margin: 0;
+      background: #f5f6fa;
+      font-family: Arial, sans-serif;
+      color: #333;
     }
 
-    body{
-      margin:0;
-      font-family:Arial, Helvetica, sans-serif;
-      background:var(--bg);
-      color:var(--text);
+    header {
+      background: #0b0b0c;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
     }
 
-    header{
-      background:#111;
-      padding:14px 20px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      flex-wrap:wrap;
+    .section {
+      margin: 20px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
+    h2 {
+      margin-top: 0;
     }
 
-    .brand .logo{
-      width:48px;
-      height:48px;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      border-radius:10px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:800;
-      font-size:18px;
-      color:#000;
-    }
-
-    nav a{
-      color:var(--text);
-      margin:0 10px;
-      text-decoration:none;
-      font-weight:bold;
-      font-size:15px;
-    }
-
-    nav a:hover{color:var(--accent);}
-
-    .wrap{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:20px;
-    }
-
-    .hero{
-      background:var(--card);
-      padding:30px;
-      border-radius:var(--radius);
-      margin-top:20px;
-      text-align:center;
-    }
-
-    .hero h1{
-      font-size:32px;
-      color:var(--accent);
-      margin:0 0 10px 0;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-      gap:18px;
-      margin-top:20px;
-    }
-
-    .card{
-      background:var(--card);
-      padding:14px;
-      border-radius:var(--radius);
-    }
-
-    .card img{
-      width:100%;
-      height:160px;
-      object-fit:cover;
-      border-radius:10px;
-    }
-
-    .cta{
-      display:inline-block;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      padding:12px 20px;
-      border-radius:10px;
-      font-weight:bold;
-      color:#000;
-      text-decoration:none;
-      margin-top:12px;
-    }
-
-    footer{
-      margin-top:30px;
-      text-align:center;
-      padding:20px;
-      color:var(--muted);
-    }
-
-    .wa{
-      position:fixed;
-      right:18px;
-      bottom:18px;
-      background:#25D366;
-      padding:14px 18px;
-      color:white;
-      border-radius:50px;
-      font-weight:bold;
-      text-decoration:none;
-      box-shadow:0 5px 20px rgba(0,0,0,0.4);
+    footer {
+      margin-top: 40px;
+      background: #0b0b0c;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      font-size: 14px;
     }
   </style>
 </head>
@@ -138,111 +50,22 @@
 <body>
 
 <header>
-  <div class="brand">
-    <div class="logo">BM</div>
-    <div>
-      <strong>Brasil & Mundo</strong><br>
-      <small>Turismo • Experiências • Descobertas</small>
-    </div>
-  </div>
-
-  <nav>
-    <a href="#brasil">Brasil</a>
-    <a href="#mundo">Mundo</a>
-    <a href="#exp">Experiências</a>
-    <a href="#contato">Contato</a>
-  </nav>
+  🇧🇷 Brasil & Mundo – Turismo Histórico
 </header>
 
-
-<div class="wrap">
-
-  <section class="hero">
-    <h1>Descubra destinos incríveis</h1>
-    <p>Guias profissionais, conteúdos exclusivos e experiências inesquecíveis pelo Brasil e pelo mundo.</p>
-    <a class="cta" href="#brasil">Explorar agora</a>
-  </section>
-
-  <h2 id="brasil">🌎 Destinos no Brasil</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Chapada_Diamantina_-_Vale_do_Pati.jpg">
-      <h3>Chapada Diamantina</h3>
-      <p>Natureza viva, trilhas e cachoeiras.</p>
-    </div>
-
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Cristo_Redentor_-_Rio.jpg">
-      <h3>Rio de Janeiro</h3>
-      <p>Praias, cultura e paisagens únicas.</p>
-    </div>
-
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Salvador_Bahia.jpg">
-      <h3>Salvador</h3>
-      <p>História, música e energia contagiante.</p>
-    </div>
-  </div>
-
-
-  <h2 id="mundo" style="margin-top:40px;">✈️ Destinos pelo Mundo</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Eiffel_Tower%2C_Paris_3_May_2014.jpg">
-      <h3>Paris</h3>
-      <p>Arte, romance e gastronomia.</p>
-    </div>
-
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Tokyo_Montage_2015.jpg">
-      <h3>Tóquio</h3>
-      <p>Tecnologia, tradição e energia vibrante.</p>
-    </div>
-
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Grand_Canyon_pano_1.jpg">
-      <h3>EUA</h3>
-      <p>Natureza e cidades icônicas.</p>
-    </div>
-  </div>
-
-
-  <h2 id="exp" style="margin-top:40px;">🔥 Experiências</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/d/dc/Fernando_de_Noronha_Baia_dos_Porcos_2.jpg">
-      <h3>Praias paraíso</h3>
-      <p>Os mares mais lindos para conhecer.</p>
-    </div>
-
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Brazil_Iguazu_Falls.jpg">
-      <h3>Aventura & Natureza</h3>
-      <p>Cachoeiras, trilhas e rios impressionantes.</p>
-    </div>
-
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/S%C3%A3o_Paulo_skyline.jpg">
-      <h3>Cidades Modernas</h3>
-      <p>Os melhores centros urbanos.</p>
-    </div>
-  </div>
-
-
-  <h2 id="contato" style="margin-top:40px;">💬 Contato</h2>
-  <p>
-    Entre em contato para tirar dúvidas, receber dicas ou solicitar roteiros personalizados.
-  </p>
-  <a class="cta" href="https://wa.me/5511914928585">Falar no WhatsApp</a>
-
+<div class="section">
+  <h2>🌍 Bem-vindo!</h2>
+  <p>Explore lugares históricos incríveis do Brasil e do mundo. Seu portal de viagens, cultura e experiências!</p>
 </div>
 
+<div class="section">
+  <h2>🏛️ Pontos Históricos</h2>
+  <p>Conteúdos serão adicionados aqui. Prepare-se para conhecer lugares impressionantes!</p>
+</div>
 
 <footer>
-  © 2025 Brasil & Mundo — Criado por Rosângela Passos com amor 💛
+  © 2025 – Brasil & Mundo Turismo
 </footer>
-
-<a class="wa" href="https://wa.me/5511914928585">💬 WhatsApp</a>
 
 </body>
 </html>
