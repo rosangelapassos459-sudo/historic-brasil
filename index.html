@@ -4,325 +4,182 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Brasil & Mundo — Turismo Histórico</title>
-  <meta name="description" content="Descubra destinos históricos e culturais do Brasil e do mundo. Guias, roteiros e contato via WhatsApp." />
-  <meta name="theme-color" content="#004aad">
+  <meta name="description" content="Guias, destinos, experiências e turismo histórico pelo Brasil e pelo Mundo.">
+  <meta name="keywords" content="Turismo, Brasil, viagens, destinos, turismo histórico, roteiros, mundo">
+  <meta name="author" content="Rosângela Passos">
 
-  <!-- Styles (tema azul profissional) -->
   <style>
     :root{
-      --bg: #f5f6fa;
-      --card: #ffffff;
-      --text: #222;
-      --muted: #666;
-      --primary: #004aad; /* azul profissional */
-      --accent: #0077ff;
-      --radius: 12px;
-      --button-padding: 12px 18px;
-      --shadow: 0 6px 18px rgba(0,0,0,0.08);
+      --bg:#0a0a0a;
+      --card:#101010;
+      --text:#f2f2f2;
+      --muted:#bdbdbd;
+      --accent:#ffcc33;
+      --accent2:#e6b82e;
+      --radius:14px;
+      --maxw:1100px;
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
+    html, body{
       margin:0;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background:var(--bg);
+      padding:0;
+      background:#000;
+      font-family:Arial, Helvetica, sans-serif;
       color:var(--text);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
     }
 
-    header.appbar{
-      background:var(--primary);
+    .wrap{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:16px;
+    }
+
+    /* MENU FIXO */
+    nav.menu{
+      position:sticky;
+      top:0;
+      z-index:999;
+      background:#111;
+      padding:12px 10px;
+      display:flex;
+      gap:18px;
+      justify-content:center;
+      border-bottom:1px solid #222;
+      box-shadow:0 2px 10px rgba(0,0,0,0.4);
+    }
+    nav.menu a{
       color:white;
-      padding:18px 16px;
+      text-decoration:none;
+      font-weight:bold;
+      padding:6px 10px;
+      border-radius:6px;
+    }
+    nav.menu a:hover{
+      background:rgba(255,255,255,0.1);
+    }
+
+    header{
+      padding:20px 0;
       text-align:center;
-      font-weight:700;
-      font-size:20px;
     }
 
-    .container{
-      max-width:920px;
-      margin:18px auto;
-      padding:0 16px 48px;
+    header h1{
+      font-size:28px;
+      margin:0;
+      color:var(--accent);
     }
 
-    /* language selector */
-    .lang-row{
-      display:flex;
-      gap:10px;
-      justify-content:center;
-      margin:14px 0;
-    }
-    .lang-btn{
-      background:white;
-      border:1px solid #e6e9ee;
-      padding:8px 12px;
-      border-radius:10px;
-      cursor:pointer;
-      box-shadow:0 4px 10px rgba(0,0,0,0.03);
-      font-weight:600;
-      display:flex;
-      gap:8px;
-      align-items:center;
-    }
-    .lang-btn.active{
-      background:var(--primary);
-      color:white;
-      border-color:var(--primary);
+    header p{
+      margin:6px 0 0;
+      color:var(--muted);
     }
 
-    /* logo */
-    .logo-wrap{
-      display:flex;
-      justify-content:center;
-      margin:18px 0;
-    }
-    .logo-wrap img{
-      max-width:220px;
-      width:40%;
-      height:auto;
-      border-radius:8px;
-      box-shadow:var(--shadow);
-      background:#111; /* caso imagem seja translúcida */
+    .hero{
+      background:var(--card);
+      padding:20px;
+      border-radius:var(--radius);
+      margin-bottom:20px;
+      text-align:center;
     }
 
-    /* cards */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:20px;
+    }
+
     .card{
       background:var(--card);
+      padding:14px;
       border-radius:var(--radius);
-      padding:20px;
-      margin-bottom:18px;
-      box-shadow:var(--shadow);
     }
-    .card h2{
-      margin:0 0 8px 0;
-      font-size:22px;
-    }
-    .card p{ margin:0 0 12px 0; color:var(--muted); }
 
-    .cta{
-      display:inline-block;
-      background:var(--accent);
-      color:white;
-      padding:var(--button-padding);
+    .card img{
+      width:100%;
+      height:150px;
+      object-fit:cover;
       border-radius:10px;
-      text-decoration:none;
-      font-weight:700;
-      box-shadow:0 8px 18px rgba(0,119,255,0.16);
     }
 
-    /* sections */
-    .sections{ margin-top:8px; }
-    .section{ margin-bottom:12px; }
+    .card h3{
+      margin:10px 0 4px;
+    }
 
     footer{
-      text-align:center;
       margin-top:26px;
+      padding:20px;
+      text-align:center;
       color:var(--muted);
-      font-size:14px;
     }
 
-    /* responsive */
-    @media(min-width:720px){
-      .logo-wrap img{ width:220px; }
-      .container{ padding:0; }
+    /* Responsivo */
+    @media(max-width:720px){
+      .grid{
+        grid-template-columns:1fr;
+      }
+      nav.menu{
+        flex-wrap:wrap;
+      }
     }
   </style>
-</head>
-<body>
-  <body>
 
-<!-- MENU SUPERIOR -->
-<nav style="
-    background: #004aad;
-    padding: 12px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    font-size: 18px;
-">
-    <a href="index.html" style="color:white; text-decoration:none; font-weight:bold;">Início</a>
-    <a href="destinos.html" style="color:white; text-decoration:none; font-weight:bold;">Destinos</a>
-    <a href="blog.html" style="color:white; text-decoration:none; font-weight:bold;">Blog</a>
-    <a href="contato.html" style="color:white; text-decoration:none; font-weight:bold;">Contato</a>
-</nav>
-  <header class="appbar" id="site-title">Brasil & Mundo — Turismo Histórico</header>
-
-  <div class="container">
-
-    <!-- Logo (se você já enviou a imagem ao repositório, deixe o nome correto) -->
-    <div class="logo-wrap">
-      <!-- Se o arquivo do logo se chama "7776.jpg" no repo, mantenha. Se usar outro nome, atualize. -->
-      <img src="7776.jpg" alt="Logo BM" id="site-logo">
-    </div>
-
-    <!-- Language selector -->
-    <div class="lang-row" role="tablist" aria-label="Seleção de idioma">
-      <button class="lang-btn" id="btn-pt" data-lang="pt">🇧🇷 PT</button>
-      <button class="lang-btn" id="btn-en" data-lang="en">🇺🇸 EN</button>
-      <button class="lang-btn" id="btn-es" data-lang="es">🇪🇸 ES</button>
-    </div>
-
-    <!-- Main content -->
-    <main>
-      <section class="card section" id="hero">
-        <h2 id="hero-title">Bem-vindo(a)!</h2>
-        <p id="hero-text">Descubra destinos históricos incríveis no Brasil e ao redor do mundo.</p>
-        <a id="btn-explore" class="cta" href="#destinos">Explorar Destinos</a>
-      </section>
-
-      <section class="card section" id="featured">
-        <h2 id="featured-title">Conteúdos em Destaque</h2>
-        <p id="featured-text">Guias, roteiros e histórias para planejar sua viagem e viver experiências inesquecíveis.</p>
-      </section>
-
-      <section class="card section" id="destinos">
-        <h2 id="destinos-title">Destinos Populares</h2>
-        <p id="destinos-text">Veja alguns lugares que vamos destacar em breve: Chapada Diamantina, Ouro Preto, Paraty e muitos mais.</p>
-        <!-- exemplo de lista curta -->
-        <ul id="destinos-list" style="color:var(--muted); margin-top:8px;">
-          <li>Chapada Diamantina — Brasil</li>
-          <li>Ouro Preto — Brasil</li>
-          <li>Sintra — Portugal</li>
-        </ul>
-      </section>
-
-      <section class="card section" id="contato">
-        <h2 id="contato-title">Contato</h2>
-        <p id="contato-text">Clique abaixo para falar conosco no WhatsApp.</p>
-
-        <!-- WhatsApp button (usa o número que você passou) -->
-        <!-- Número: +55 11 91492-8585 -->
-        <a id="whatsapp-btn" class="cta" href="https://wa.me/5511914928585?text=Ol%C3%A1%2C+gostaria+de+mais+informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer">
-          Falar no WhatsApp
-        </a>
-      </section>
-
-      <!-- rodapé -->
-      <footer>
-        <div id="footer-text">© 2025 — Brasil & Mundo Turismo Histórico</div>
-        <div style="margin-top:8px;color:var(--muted);font-size:13px;">Feito com ♥ — pronto para monetizar</div>
-      </footer>
-    </main>
-
-  </div>
-
-  <!-- Traduções e scripts -->
   <script>
-    // Conteúdo traduzido (pt / en / es)
-    const translations = {
-      pt: {
-        title: "Brasil & Mundo — Turismo Histórico",
-        heroTitle: "Bem-vindo(a)!",
-        heroText: "Descubra destinos históricos incríveis no Brasil e ao redor do mundo.",
-        explore: "Explorar Destinos",
-        featuredTitle: "Conteúdos em Destaque",
-        featuredText: "Guias, roteiros e histórias para planejar sua viagem e viver experiências inesquecíveis.",
-        destinosTitle: "Destinos Populares",
-        destinosText: "Veja alguns lugares que vamos destacar em breve: Chapada Diamantina, Ouro Preto, Paraty e muitos mais.",
-        contatoTitle: "Contato",
-        contatoText: "Clique abaixo para falar conosco no WhatsApp.",
-        whatsappText: "Falar no WhatsApp",
-        footer: "© 2025 — Brasil & Mundo Turismo Histórico"
-      },
-      en: {
-        title: "Brazil & World — Historical Tourism",
-        heroTitle: "Welcome!",
-        heroText: "Discover incredible historical destinations in Brazil and around the world.",
-        explore: "Explore Destinations",
-        featuredTitle: "Featured Content",
-        featuredText: "Guides, itineraries and stories to plan your trip and live unforgettable experiences.",
-        destinosTitle: "Popular Destinations",
-        destinosText: "Soon featured: Chapada Diamantina, Ouro Preto, Paraty and many more.",
-        contatoTitle: "Contact",
-        contatoText: "Click below to chat with us on WhatsApp.",
-        whatsappText: "Chat on WhatsApp",
-        footer: "© 2025 — Brazil & World Historical Tourism"
-      },
-      es: {
-        title: "Brasil & Mundo — Turismo Histórico",
-        heroTitle: "¡Bienvenido(a)!",
-        heroText: "Descubre destinos históricos increíbles en Brasil y alrededor del mundo.",
-        explore: "Explorar Destinos",
-        featuredTitle: "Contenidos Destacados",
-        featuredText: "Guías, rutas e historias para planear tu viaje y vivir experiencias inolvidables.",
-        destinosTitle: "Destinos Populares",
-        destinosText: "Muy pronto: Chapada Diamantina, Ouro Preto, Paraty y muchos más.",
-        contatoTitle: "Contacto",
-        contatoText: "Haz clic abajo para chatear con nosotros por WhatsApp.",
-        whatsappText: "Chatear por WhatsApp",
-        footer: "© 2025 — Brasil & Mundo Turismo Histórico"
-      }
-    };
-
-    // Elementos de texto
-    const els = {
-      siteTitle: document.getElementById('site-title'),
-      heroTitle: document.getElementById('hero-title'),
-      heroText: document.getElementById('hero-text'),
-      btnExplore: document.getElementById('btn-explore'),
-      featuredTitle: document.getElementById('featured-title'),
-      featuredText: document.getElementById('featured-text'),
-      destinosTitle: document.getElementById('destinos-title'),
-      destinosText: document.getElementById('destinos-text'),
-      contatoTitle: document.getElementById('contato-title'),
-      contatoText: document.getElementById('contato-text'),
-      whatsappBtn: document.getElementById('whatsapp-btn'),
-      footerText: document.getElementById('footer-text')
-    };
-
-    // WhatsApp messages pré-definidas por idioma (URL-encoded)
-    const waMessages = {
-      pt: encodeURIComponent("Olá, gostaria de mais informações sobre os destinos e pacotes."),
-      en: encodeURIComponent("Hi, I would like more information about destinations and packages."),
-      es: encodeURIComponent("Hola, quisiera más información sobre los destinos y paquetes.")
-    };
-
-    // Aplica idioma
-    function applyLang(lang){
-      const t = translations[lang] || translations.pt;
-      els.siteTitle.textContent = t.title;
-      els.heroTitle.textContent = t.heroTitle;
-      els.heroText.textContent = t.heroText;
-      els.btnExplore.textContent = t.explore;
-      els.featuredTitle.textContent = t.featuredTitle;
-      els.featuredText.textContent = t.featuredText;
-      els.destinosTitle.textContent = t.destinosTitle;
-      els.destinosText.textContent = t.destinosText;
-      els.contatoTitle.textContent = t.contatoTitle;
-      els.contatoText.textContent = t.contatoText;
-      els.whatsappBtn.textContent = t.whatsappText;
-      els.footerText.textContent = t.footer;
-
-      // Atualiza link do WhatsApp (usa o seu número)
-      const phone = "5511914928585";
-      const msg = waMessages[lang] || waMessages.pt;
-      els.whatsappBtn.href = "https://wa.me/" + phone + "?text=" + msg;
-
-      // marca botão ativo
-      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-      const activeBtn = document.querySelector('.lang-btn[data-lang="'+lang+'"]');
-      if(activeBtn) activeBtn.classList.add('active');
-
-      // salva preferência local
-      try{ localStorage.setItem('siteLang',''+lang); }catch(e){}
+    // Sistema simples de idioma
+    function lang(l){
+      document.documentElement.lang = l;
     }
-
-    // inicialização
-    (function initLanguage(){
-      // botões
-      document.querySelectorAll('.lang-btn').forEach(btn=>{
-        btn.addEventListener('click', ()=> applyLang(btn.dataset.lang));
-      });
-
-      // checar preferência salva
-      let saved = 'pt';
-      try{ saved = localStorage.getItem('siteLang') || 'pt'; }catch(e){}
-      applyLang(saved);
-    })();
   </script>
-</body>
-                                                                            </html>
+</head>
 
+<body>
+
+<!-- MENU FIXO -->
+<nav class="menu">
+  <a href="index.html">Início</a>
+  <a href="destinos.html">Destinos</a>
+  <a href="blog.html">Blog</a>
+  <a href="contato.html">Contato</a>
+</nav>
+
+<div class="wrap">
+
+<header>
+  <h1>Brasil & Mundo — Turismo Histórico</h1>
+  <p>Descubra lugares incríveis no Brasil e no mundo 🌍</p>
+</header>
+
+<section class="hero">
+  <h2>Destaques para você</h2>
+  <p>Explore culturas, paisagens, histórias e roteiros inesquecíveis.</p>
+</section>
+
+<section class="grid">
+
+  <article class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Chapada_Diamantina_-_Vale_do_Pati.jpg">
+    <h3>Chapada Diamantina</h3>
+    <p>Natureza viva, trilhas e vistas únicas.</p>
+  </article>
+
+  <article class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Cristo_Redentor_-_Rio.jpg">
+    <h3>Rio de Janeiro</h3>
+    <p>Belezas naturais e cartões-postais.</p>
+  </article>
+
+  <article class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/2014_Foz_do_Iguacu_-_Cataratas.jpg">
+    <h3>Foz do Iguaçu</h3>
+    <p>Uma das maravilhas do mundo moderno.</p>
+  </article>
+
+</section>
+
+<footer>
+  © 2025 Brasil & Mundo — Criado por Rosângela Passos ✨
+</footer>
+
+</div>
+</body>
+</html>
