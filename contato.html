@@ -1,105 +1,159 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato – Brasil & Mundo Turismo Histórico</title>
 
     <style>
         body {
-            <!-- MENU SUPERIOR -->
-<nav style="
-    background: #004aad;
-    padding: 12px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    font-size: 18px;
-">
-    <a href="index.html" style="color:white; text-decoration:none; font-weight:bold;">Início</a>
-    <a href="destinos.html" style="color:white; text-decoration:none; font-weight:bold;">Destinos</a>
-    <a href="blog.html" style="color:white; text-decoration:none; font-weight:bold;">Blog</a>
-    <a href="contato.html" style="color:white; text-decoration:none; font-weight:bold;">Contato</a>
-</nav>
             margin: 0;
             font-family: Arial, sans-serif;
             background: #f5f6fa;
             color: #333;
         }
 
+        /* MENU FIXO */
+        nav {
+            background: #004aad;
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 18px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .spacer {
+            height: 70px;
+        }
+
         header {
-            background: #0057ff;
-            color: white;
-            padding: 20px;
             text-align: center;
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
+            margin-top: 20px;
         }
 
-        .container {
-            margin: 20px;
-            padding: 20px;
+        .language {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .language button {
+            padding: 8px 16px;
+            margin: 5px;
+            background: #004aad;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .contact-box {
             background: white;
+            margin: 20px auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 600px;
             border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
-        a.button {
-            display: block;
-            background: #00c000;
-            color: white;
+        input, textarea {
+            width: 100%;
             padding: 12px;
-            border-radius: 10px;
-            text-align: center;
-            text-decoration: none;
-            font-size: 18px;
-            margin-top: 15px;
-            font-weight: bold;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
         }
 
-        a.email {
-            display: block;
-            background: #ff6600;
-            color: white;
+        button.enviar {
+            background: #004aad;
             padding: 12px;
-            border-radius: 10px;
-            text-align: center;
-            text-decoration: none;
+            color: white;
+            border: none;
             font-size: 18px;
-            margin-top: 15px;
-            font-weight: bold;
+            width: 100%;
+            border-radius: 8px;
+            cursor: pointer;
         }
 
         footer {
             text-align: center;
             margin-top: 40px;
             padding: 20px;
-            color: #555;
+            color: #666;
         }
     </style>
 
+    <script>
+        function trocarIdioma(idioma) {
+            document.querySelectorAll("[data-pt]").forEach(el => {
+                el.innerHTML = el.getAttribute("data-" + idioma);
+            });
+        }
+    </script>
 </head>
 <body>
 
-<header>📞 Contato</header>
+    <!-- MENU SUPERIOR FIXO -->
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="destinos.html">Destinos</a>
+        <a href="blog.html">Blog</a>
+        <a href="contato.html">Contato</a>
+    </nav>
 
-<div class="container">
-    <h2>Fale com a gente</h2>
-    <p>Escolha a forma mais fácil para entrar em contato:</p>
+    <div class="spacer"></div>
 
-    <!-- BOTÃO WHATSAPP -->
-    <a class="button" href="https://wa.me/5511914928585?text=Ol%C3%A1!%20Vim%20pelo%20site%20Brasil%20%26%20Mundo%20Turismo%20Hist%C3%B3rico.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank">
-        💬 Falar pelo WhatsApp
-    </a>
+    <header 
+        data-pt="Contato – Fale Conosco"
+        data-en="Contact – Get in Touch"
+        data-es="Contacto – Habla con Nosotros">
+        Contato – Fale Conosco
+    </header>
 
-    <!-- BOTÃO E-MAIL -->
-    <a class="email" href="mailto:contato@seusite.com?subject=Contato%20via%20site&body=Olá!%20Gostaria%20de%20informações.">
-        ✉️ Enviar e-mail
-    </a>
+    <div class="language">
+        <button onclick="trocarIdioma('pt')">🇧🇷 Português</button>
+        <button onclick="trocarIdioma('en')">🇺🇸 English</button>
+        <button onclick="trocarIdioma('es')">🇪🇸 Español</button>
+    </div>
 
-</div>
+    <div class="contact-box">
 
-<footer>© 2025 — Brasil & Mundo Turismo Histórico</footer>
+        <h3 data-pt="Envie sua mensagem" 
+            data-en="Send Your Message"
+            data-es="Envíe Su Mensaje">
+            Envie sua mensagem
+        </h3>
+
+        <input type="text" placeholder="Seu nome">
+        <input type="email" placeholder="Seu email">
+        <textarea rows="5" placeholder="Sua mensagem"></textarea>
+
+        <button class="enviar"
+            data-pt="Enviar Mensagem"
+            data-en="Send Message"
+            data-es="Enviar Mensaje">
+            Enviar Mensagem
+        </button>
+    </div>
+
+    <footer>
+        © 2025 • Brasil & Mundo Turismo Histórico
+    </footer>
 
 </body>
-  </html>
+</html>
