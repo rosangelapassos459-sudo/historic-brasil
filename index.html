@@ -1,150 +1,311 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Brasil & Mundo — Turismo Histórico</title>
+  <meta name="description" content="Descubra destinos históricos e culturais do Brasil e do mundo. Guias, roteiros e contato via WhatsApp." />
+  <meta name="theme-color" content="#004aad">
 
+  <!-- Styles (tema azul profissional) -->
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f6fa;
-      color: #333;
+    :root{
+      --bg: #f5f6fa;
+      --card: #ffffff;
+      --text: #222;
+      --muted: #666;
+      --primary: #004aad; /* azul profissional */
+      --accent: #0077ff;
+      --radius: 12px;
+      --button-padding: 12px 18px;
+      --shadow: 0 6px 18px rgba(0,0,0,0.08);
     }
 
-    /* ===== HEADER ===== */
-    header {
-      background: #0066ff;
-      color: white;
-      padding: 18px;
-      text-align: center;
-      font-size: 22px;
-      font-weight: bold;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
     }
 
-    /* ===== LANGUAGE SELECTOR ===== */
-    .language-selector {
-      display: flex;
-      gap: 10px;
-      padding: 12px;
-      justify-content: center;
-      background: #f0f2f5;
-      border-bottom: 1px solid #ddd;
-    }
-    .language-selector button {
-      font-size: 15px;
-      padding: 8px 14px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      background: #fff;
-      box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    header.appbar{
+      background:var(--primary);
+      color:white;
+      padding:18px 16px;
+      text-align:center;
+      font-weight:700;
+      font-size:20px;
     }
 
-    /* ===== MAIN CONTAINER ===== */
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
+    .container{
+      max-width:920px;
+      margin:18px auto;
+      padding:0 16px 48px;
     }
 
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 14px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      margin-bottom: 25px;
+    /* language selector */
+    .lang-row{
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      margin:14px 0;
+    }
+    .lang-btn{
+      background:white;
+      border:1px solid #e6e9ee;
+      padding:8px 12px;
+      border-radius:10px;
+      cursor:pointer;
+      box-shadow:0 4px 10px rgba(0,0,0,0.03);
+      font-weight:600;
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+    .lang-btn.active{
+      background:var(--primary);
+      color:white;
+      border-color:var(--primary);
     }
 
-    .btn {
-      background: #0066ff;
-      padding: 12px 20px;
-      display: inline-block;
-      border-radius: 10px;
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-      margin-top: 10px;
+    /* logo */
+    .logo-wrap{
+      display:flex;
+      justify-content:center;
+      margin:18px 0;
+    }
+    .logo-wrap img{
+      max-width:220px;
+      width:40%;
+      height:auto;
+      border-radius:8px;
+      box-shadow:var(--shadow);
+      background:#111; /* caso imagem seja translúcida */
     }
 
-    footer {
-      text-align: center;
-      padding: 22px;
-      font-size: 14px;
-      color: #666;
+    /* cards */
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:20px;
+      margin-bottom:18px;
+      box-shadow:var(--shadow);
+    }
+    .card h2{
+      margin:0 0 8px 0;
+      font-size:22px;
+    }
+    .card p{ margin:0 0 12px 0; color:var(--muted); }
+
+    .cta{
+      display:inline-block;
+      background:var(--accent);
+      color:white;
+      padding:var(--button-padding);
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:700;
+      box-shadow:0 8px 18px rgba(0,119,255,0.16);
+    }
+
+    /* sections */
+    .sections{ margin-top:8px; }
+    .section{ margin-bottom:12px; }
+
+    footer{
+      text-align:center;
+      margin-top:26px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* responsive */
+    @media(min-width:720px){
+      .logo-wrap img{ width:220px; }
+      .container{ padding:0; }
     }
   </style>
 </head>
-
 <body>
+  <header class="appbar" id="site-title">Brasil & Mundo — Turismo Histórico</header>
 
-  <!-- Seleção de Idioma -->
-  <div class="language-selector">
-    <button onclick="setLanguage('pt')">🇧🇷 PT</button>
-    <button onclick="setLanguage('en')">🇺🇸 EN</button>
-    <button onclick="setLanguage('es')">🇪🇸 ES</button>
-  </div>
-
-  <!-- HEADER -->
-  <header data-pt="🌎 Brasil & Mundo — Turismo Histórico"
-          data-en="🌎 Brazil & World — Historical Tourism"
-          data-es="🌎 Brasil & Mundo — Turismo Histórico">
-  </header>
-
-  <!-- MAIN CONTENT -->
   <div class="container">
 
-    <div class="card">
-      <h2 data-pt="Bem-vindo(a)!"
-          data-en="Welcome!"
-          data-es="¡Bienvenido(a)!"></h2>
-
-      <p data-pt="Descubra destinos históricos incríveis no Brasil e ao redor do mundo."
-         data-en="Discover amazing historical destinations in Brazil and around the world."
-         data-es="Descubre increíbles destinos históricos en Brasil y en todo el mundo."></p>
-
-      <a href="destinos.html" class="btn"
-         data-pt="Explorar Destinos"
-         data-en="Explore Destinations"
-         data-es="Explorar Destinos"></a>
+    <!-- Logo (se você já enviou a imagem ao repositório, deixe o nome correto) -->
+    <div class="logo-wrap">
+      <!-- Se o arquivo do logo se chama "7776.jpg" no repo, mantenha. Se usar outro nome, atualize. -->
+      <img src="7776.jpg" alt="Logo BM" id="site-logo">
     </div>
 
-    <div class="card">
-      <h3 data-pt="Conteúdos em Destaque"
-          data-en="Featured Content"
-          data-es="Contenido Destacado"></h3>
-
-      <p data-pt="Guia completo de turismo histórico, trilhas, cultura e experiências."
-         data-en="Complete guide to historical tourism, trails, culture and experiences."
-         data-es="Guía completa de turismo histórico, senderos, cultura y experiencias."></p>
+    <!-- Language selector -->
+    <div class="lang-row" role="tablist" aria-label="Seleção de idioma">
+      <button class="lang-btn" id="btn-pt" data-lang="pt">🇧🇷 PT</button>
+      <button class="lang-btn" id="btn-en" data-lang="en">🇺🇸 EN</button>
+      <button class="lang-btn" id="btn-es" data-lang="es">🇪🇸 ES</button>
     </div>
+
+    <!-- Main content -->
+    <main>
+      <section class="card section" id="hero">
+        <h2 id="hero-title">Bem-vindo(a)!</h2>
+        <p id="hero-text">Descubra destinos históricos incríveis no Brasil e ao redor do mundo.</p>
+        <a id="btn-explore" class="cta" href="#destinos">Explorar Destinos</a>
+      </section>
+
+      <section class="card section" id="featured">
+        <h2 id="featured-title">Conteúdos em Destaque</h2>
+        <p id="featured-text">Guias, roteiros e histórias para planejar sua viagem e viver experiências inesquecíveis.</p>
+      </section>
+
+      <section class="card section" id="destinos">
+        <h2 id="destinos-title">Destinos Populares</h2>
+        <p id="destinos-text">Veja alguns lugares que vamos destacar em breve: Chapada Diamantina, Ouro Preto, Paraty e muitos mais.</p>
+        <!-- exemplo de lista curta -->
+        <ul id="destinos-list" style="color:var(--muted); margin-top:8px;">
+          <li>Chapada Diamantina — Brasil</li>
+          <li>Ouro Preto — Brasil</li>
+          <li>Sintra — Portugal</li>
+        </ul>
+      </section>
+
+      <section class="card section" id="contato">
+        <h2 id="contato-title">Contato</h2>
+        <p id="contato-text">Clique abaixo para falar conosco no WhatsApp.</p>
+
+        <!-- WhatsApp button (usa o número que você passou) -->
+        <!-- Número: +55 11 91492-8585 -->
+        <a id="whatsapp-btn" class="cta" href="https://wa.me/5511914928585?text=Ol%C3%A1%2C+gostaria+de+mais+informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer">
+          Falar no WhatsApp
+        </a>
+      </section>
+
+      <!-- rodapé -->
+      <footer>
+        <div id="footer-text">© 2025 — Brasil & Mundo Turismo Histórico</div>
+        <div style="margin-top:8px;color:var(--muted);font-size:13px;">Feito com ♥ — pronto para monetizar</div>
+      </footer>
+    </main>
 
   </div>
 
-  <!-- FOOTER -->
-  <footer data-pt="© 2025 — Brasil & Mundo Turismo Histórico"
-          data-en="© 2025 — Brazil & World Historical Tourism"
-          data-es="© 2025 — Brasil & Mundo Turismo Histórico">
-  </footer>
-
-  <!-- LANGUAGE SCRIPT -->
+  <!-- Traduções e scripts -->
   <script>
-    function setLanguage(lang) {
-      localStorage.setItem("siteLang", lang);
-      updateLanguage();
+    // Conteúdo traduzido (pt / en / es)
+    const translations = {
+      pt: {
+        title: "Brasil & Mundo — Turismo Histórico",
+        heroTitle: "Bem-vindo(a)!",
+        heroText: "Descubra destinos históricos incríveis no Brasil e ao redor do mundo.",
+        explore: "Explorar Destinos",
+        featuredTitle: "Conteúdos em Destaque",
+        featuredText: "Guias, roteiros e histórias para planejar sua viagem e viver experiências inesquecíveis.",
+        destinosTitle: "Destinos Populares",
+        destinosText: "Veja alguns lugares que vamos destacar em breve: Chapada Diamantina, Ouro Preto, Paraty e muitos mais.",
+        contatoTitle: "Contato",
+        contatoText: "Clique abaixo para falar conosco no WhatsApp.",
+        whatsappText: "Falar no WhatsApp",
+        footer: "© 2025 — Brasil & Mundo Turismo Histórico"
+      },
+      en: {
+        title: "Brazil & World — Historical Tourism",
+        heroTitle: "Welcome!",
+        heroText: "Discover incredible historical destinations in Brazil and around the world.",
+        explore: "Explore Destinations",
+        featuredTitle: "Featured Content",
+        featuredText: "Guides, itineraries and stories to plan your trip and live unforgettable experiences.",
+        destinosTitle: "Popular Destinations",
+        destinosText: "Soon featured: Chapada Diamantina, Ouro Preto, Paraty and many more.",
+        contatoTitle: "Contact",
+        contatoText: "Click below to chat with us on WhatsApp.",
+        whatsappText: "Chat on WhatsApp",
+        footer: "© 2025 — Brazil & World Historical Tourism"
+      },
+      es: {
+        title: "Brasil & Mundo — Turismo Histórico",
+        heroTitle: "¡Bienvenido(a)!",
+        heroText: "Descubre destinos históricos increíbles en Brasil y alrededor del mundo.",
+        explore: "Explorar Destinos",
+        featuredTitle: "Contenidos Destacados",
+        featuredText: "Guías, rutas e historias para planear tu viaje y vivir experiencias inolvidables.",
+        destinosTitle: "Destinos Populares",
+        destinosText: "Muy pronto: Chapada Diamantina, Ouro Preto, Paraty y muchos más.",
+        contatoTitle: "Contacto",
+        contatoText: "Haz clic abajo para chatear con nosotros por WhatsApp.",
+        whatsappText: "Chatear por WhatsApp",
+        footer: "© 2025 — Brasil & Mundo Turismo Histórico"
+      }
+    };
+
+    // Elementos de texto
+    const els = {
+      siteTitle: document.getElementById('site-title'),
+      heroTitle: document.getElementById('hero-title'),
+      heroText: document.getElementById('hero-text'),
+      btnExplore: document.getElementById('btn-explore'),
+      featuredTitle: document.getElementById('featured-title'),
+      featuredText: document.getElementById('featured-text'),
+      destinosTitle: document.getElementById('destinos-title'),
+      destinosText: document.getElementById('destinos-text'),
+      contatoTitle: document.getElementById('contato-title'),
+      contatoText: document.getElementById('contato-text'),
+      whatsappBtn: document.getElementById('whatsapp-btn'),
+      footerText: document.getElementById('footer-text')
+    };
+
+    // WhatsApp messages pré-definidas por idioma (URL-encoded)
+    const waMessages = {
+      pt: encodeURIComponent("Olá, gostaria de mais informações sobre os destinos e pacotes."),
+      en: encodeURIComponent("Hi, I would like more information about destinations and packages."),
+      es: encodeURIComponent("Hola, quisiera más información sobre los destinos y paquetes.")
+    };
+
+    // Aplica idioma
+    function applyLang(lang){
+      const t = translations[lang] || translations.pt;
+      els.siteTitle.textContent = t.title;
+      els.heroTitle.textContent = t.heroTitle;
+      els.heroText.textContent = t.heroText;
+      els.btnExplore.textContent = t.explore;
+      els.featuredTitle.textContent = t.featuredTitle;
+      els.featuredText.textContent = t.featuredText;
+      els.destinosTitle.textContent = t.destinosTitle;
+      els.destinosText.textContent = t.destinosText;
+      els.contatoTitle.textContent = t.contatoTitle;
+      els.contatoText.textContent = t.contatoText;
+      els.whatsappBtn.textContent = t.whatsappText;
+      els.footerText.textContent = t.footer;
+
+      // Atualiza link do WhatsApp (usa o seu número)
+      const phone = "5511914928585";
+      const msg = waMessages[lang] || waMessages.pt;
+      els.whatsappBtn.href = "https://wa.me/" + phone + "?text=" + msg;
+
+      // marca botão ativo
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      const activeBtn = document.querySelector('.lang-btn[data-lang="'+lang+'"]');
+      if(activeBtn) activeBtn.classList.add('active');
+
+      // salva preferência local
+      try{ localStorage.setItem('siteLang',''+lang); }catch(e){}
     }
 
-    function updateLanguage() {
-      const lang = localStorage.getItem("siteLang") || "pt";
-      document.querySelectorAll("[data-pt]").forEach(el => {
-        el.innerHTML = el.getAttribute(`data-${lang}`);
+    // inicialização
+    (function initLanguage(){
+      // botões
+      document.querySelectorAll('.lang-btn').forEach(btn=>{
+        btn.addEventListener('click', ()=> applyLang(btn.dataset.lang));
       });
-    }
 
-    document.addEventListener("DOMContentLoaded", updateLanguage);
+      // checar preferência salva
+      let saved = 'pt';
+      try{ saved = localStorage.getItem('siteLang') || 'pt'; }catch(e){}
+      applyLang(saved);
+    })();
   </script>
-
 </body>
-</html>
+                                                                            </html>
