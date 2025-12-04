@@ -1,194 +1,118 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog — Brasil & Mundo Turismo Histórico</title>
-  <meta name="description" content="Artigos sobre turismo histórico, cultura, trilhas, viagens e curiosidades pelo Brasil e pelo mundo.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog – Brasil & Mundo Turismo Histórico</title>
 
-  <style>
-    :root{
-      --bg:#f5f6fa;
-      --card:#ffffff;
-      --text:#222;
-      --muted:#666;
-      --primary:#004aad;
-      --accent:#0077ff;
-      --radius:14px;
-      --shadow:0 6px 18px rgba(0,0,0,0.10);
-      --pad:16px;
-    }
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f6fa;
+            color: #333;
+        }
 
-    body{
-      margin:0;
-      font-family:Inter,Arial;
-      background:var(--bg);
-      color:var(--text);
-    }
+        header {
+            background: #0057ff;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
 
-    header{
-      background:var(--primary);
-      color:white;
-      padding:18px;
-      text-align:center;
-      font-weight:700;
-      font-size:22px;
-    }
+        .language {
+            margin-top: 10px;
+            text-align: center;
+        }
 
-    .container{
-      max-width:900px;
-      margin:auto;
-      padding:var(--pad);
-    }
+        .language button {
+            background: white;
+            border: 1px solid #0057ff;
+            color: #0057ff;
+            padding: 8px 16px;
+            margin: 5px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
 
-    .lang-row{
-      display:flex;
-      justify-content:center;
-      gap:10px;
-      margin:20px 0;
-    }
-    .lang-btn{
-      padding:8px 12px;
-      border-radius:10px;
-      border:1px solid #ccc;
-      background:white;
-      cursor:pointer;
-      font-weight:600;
-      box-shadow:0 4px 10px rgba(0,0,0,0.05);
-    }
-    .lang-btn.active{
-      background:var(--primary);
-      color:white;
-      border-color:var(--primary);
-    }
+        .post {
+            background: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
 
-    .post{
-      background:var(--card);
-      padding:var(--pad);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      margin-bottom:20px;
-    }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: #555;
+        }
+    </style>
 
-    .post h2{
-      margin-top:0;
-    }
-
-    .readmore{
-      display:inline-block;
-      margin-top:10px;
-      color:var(--primary);
-      font-weight:600;
-      text-decoration:none;
-    }
-
-    footer{
-      text-align:center;
-      color:var(--muted);
-      margin-top:30px;
-      margin-bottom:20px;
-    }
-  </style>
+    <script>
+        function trocarIdioma(idioma) {
+            document.querySelectorAll("[data-pt]").forEach(el => {
+                el.innerText = el.getAttribute("data-" + idioma);
+            });
+        }
+    </script>
 </head>
 
 <body>
 
-<header id="title">Blog de Turismo Histórico</header>
+<header data-pt="Blog – Brasil & Mundo Turismo Histórico"
+        data-en="Blog – Brazil & World Historical Tourism"
+        data-es="Blog – Brasil y Mundo Turismo Histórico">
+    Blog – Brasil & Mundo Turismo Histórico
+</header>
 
-<div class="container">
-
-  <!-- SELETOR DE IDIOMA -->
-  <div class="lang-row">
-    <button class="lang-btn" data-lang="pt">🇧🇷 PT</button>
-    <button class="lang-btn" data-lang="en">🇺🇸 EN</button>
-    <button class="lang-btn" data-lang="es">🇪🇸 ES</button>
-  </div>
-
-  <!-- POST 1 -->
-  <div class="post">
-    <h2 id="p1-title">5 destinos históricos imperdíveis no Brasil</h2>
-    <p id="p1-text">
-      Conheça lugares incríveis que guardam parte importante da história brasileira, cultura e arquitetura antiga.
-    </p>
-    <a href="#" class="readmore" id="p1-btn">Ler mais</a>
-  </div>
-
-  <!-- POST 2 -->
-  <div class="post">
-    <h2 id="p2-title">Como planejar uma viagem cultural perfeita</h2>
-    <p id="p2-text">
-      Dicas essenciais para quem deseja explorar o mundo com conhecimento, segurança e boas experiências.
-    </p>
-    <a href="#" class="readmore" id="p2-btn">Ler mais</a>
-  </div>
-
-  <!-- POST 3 -->
-  <div class="post">
-    <h2 id="p3-title">As cidades coloniais mais lindas da América Latina</h2>
-    <p id="p3-text">
-      Uma seleção especial de lugares históricos que encantam turistas do mundo inteiro.
-    </p>
-    <a href="#" class="readmore" id="p3-btn">Ler mais</a>
-  </div>
-
-  <footer id="footer">
-    © 2025 — Brasil & Mundo Turismo Histórico
-  </footer>
-
+<div class="language">
+    <button onclick="trocarIdioma('pt')">🇧🇷 PT</button>
+    <button onclick="trocarIdioma('en')">🇺🇸 EN</button>
+    <button onclick="trocarIdioma('es')">🇪🇸 ES</button>
 </div>
 
-<script>
-const t = {
-  pt:{
-    title:"Blog de Turismo Histórico",
-    p1:{ t:"5 destinos históricos imperdíveis no Brasil", p:"Conheça lugares incríveis que guardam parte importante da história brasileira, cultura e arquitetura antiga.", b:"Ler mais" },
-    p2:{ t:"Como planejar uma viagem cultural perfeita", p:"Dicas essenciais para quem deseja explorar o mundo com conhecimento, segurança e boas experiências.", b:"Ler mais" },
-    p3:{ t:"As cidades coloniais mais lindas da América Latina", p:"Uma seleção especial de lugares históricos que encantam turistas do mundo inteiro.", b:"Ler mais" },
-    footer:"© 2025 — Brasil & Mundo Turismo Histórico"
-  },
-  en:{
-    title:"Historical Tourism Blog",
-    p1:{ t:"5 unmissable historical destinations in Brazil", p:"Discover incredible places that preserve important parts of Brazil’s history, culture and architecture.", b:"Read more" },
-    p2:{ t:"How to plan the perfect cultural trip", p:"Essential tips for those who want to explore the world with knowledge, safety and rich experiences.", b:"Read more" },
-    p3:{ t:"The most beautiful colonial cities in Latin America", p:"A curated selection of historical places that enchant tourists from around the world.", b:"Read more" },
-    footer:"© 2025 — Brazil & World Historical Tourism"
-  },
-  es:{
-    title:"Blog de Turismo Histórico",
-    p1:{ t:"5 destinos históricos imperdibles en Brasil", p:"Descubre lugares increíbles que conservan parte importante de la historia, cultura y arquitectura brasileña.", b:"Leer más" },
-    p2:{ t:"Cómo planear el viaje cultural perfecto", p:"Consejos esenciales para quienes desean explorar el mundo con conocimiento, seguridad y buenas experiencias.", b:"Leer más" },
-    p3:{ t:"Las ciudades coloniales más hermosas de América Latina", p:"Una selección especial de lugares históricos que encantan a turistas de todo el mundo.", b:"Leer más" },
-    footer:"© 2025 — Brasil & Mundo Turismo Histórico"
-  }
-};
+<!-- MODELO DE POST 1 -->
+<div class="post">
+    <h2 data-pt="Conheça as Sete Maravilhas do Brasil"
+        data-en="Discover the Seven Wonders of Brazil"
+        data-es="Conoce las Siete Maravillas de Brasil">
+        Conheça as Sete Maravilhas do Brasil
+    </h2>
 
-function aplicar(lang){
-  document.getElementById("title").textContent = t[lang].title;
+    <p data-pt="Uma seleção dos lugares mais impressionantes do país para você visitar."
+       data-en="A selection of the most impressive places in Brazil for you to visit."
+       data-es="Una selección de los lugares más impresionantes de Brasil para que los visites.">
+       Uma seleção dos lugares mais impressionantes do país para você visitar.
+    </p>
+</div>
 
-  document.getElementById("p1-title").textContent = t[lang].p1.t;
-  document.getElementById("p1-text").textContent = t[lang].p1.p;
-  document.getElementById("p1-btn").textContent  = t[lang].p1.b;
+<!-- MODELO DE POST 2 -->
+<div class="post">
+    <h2 data-pt="Roteiro Histórico de Ouro Preto"
+        data-en="Historical Route of Ouro Preto"
+        data-es="Ruta Histórica de Ouro Preto">
+        Roteiro Histórico de Ouro Preto
+    </h2>
 
-  document.getElementById("p2-title").textContent = t[lang].p2.t;
-  document.getElementById("p2-text").textContent = t[lang].p2.p;
-  document.getElementById("p2-btn").textContent  = t[lang].p2.b;
+    <p data-pt="Descubra a cidade que preserva a alma da história brasileira."
+       data-en="Discover the city that preserves the soul of Brazilian history."
+       data-es="Descubre la ciudad que preserva el alma de la historia brasileña.">
+       Descubra a cidade que preserva a alma da história brasileira.
+    </p>
+</div>
 
-  document.getElementById("p3-title").textContent = t[lang].p3.t;
-  document.getElementById("p3-text").textContent = t[lang].p3.p;
-  document.getElementById("p3-btn").textContent  = t[lang].p3.b;
-
-  document.getElementById("footer").textContent = t[lang].footer;
-
-  document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
-  document.querySelector(`[data-lang="${lang}"]`).classList.add("active");
-}
-
-document.querySelectorAll(".lang-btn").forEach(btn=>{
-  btn.onclick = ()=> aplicar(btn.dataset.lang);
-});
-
-aplicar("pt");
-</script>
+<footer data-pt="© 2025 — Brasil & Mundo Turismo Histórico"
+        data-en="© 2025 — Brazil & World Historical Tourism"
+        data-es="© 2025 — Brasil y Mundo Turismo Histórico">
+    © 2025 — Brasil & Mundo Turismo Histórico
+</footer>
 
 </body>
-      </html>
+</html>
