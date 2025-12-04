@@ -1,213 +1,164 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Destinos — Brasil & Mundo Turismo Histórico</title>
-  <meta name="description" content="Explore destinos históricos no Brasil e no mundo. Guia turístico completo e trilíngue.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Destinos — Brasil & Mundo Turismo</title>
+  <meta name="description" content="Destinos nacionais e internacionais — turismo histórico, natureza e cultura.">
+  <meta name="keywords" content="destinos, viagens, turismo, Brasil, mundo, pontos turísticos">
 
   <style>
     :root{
-      --bg:#f5f6fa;
-      --card:#ffffff;
-      --text:#222;
-      --muted:#666;
-      --primary:#004aad;
-      --accent:#0077ff;
+      --bg:#0a0a0a;
+      --card:#101010;
+      --text:#f2f2f2;
+      --muted:#bdbdbd;
+      --accent:#ffcc33;
       --radius:14px;
-      --shadow:0 6px 18px rgba(0,0,0,0.10);
-      --pad:16px;
+      --maxw:1100px;
     }
 
-    body{
+    html, body{
       margin:0;
-      font-family:Inter,Arial;
-      background:var(--bg);
+      padding:0;
+      font-family:Arial, sans-serif;
+      background:#000;
       color:var(--text);
     }
 
-    header{
-      background:var(--primary);
-      color:white;
-      padding:18px;
-      text-align:center;
-      font-weight:700;
-      font-size:20px;
+    .wrap{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:16px;
     }
 
-    .container{
-      max-width:900px;
-      margin:auto;
-      padding:var(--pad);
-    }
-
-    .lang-row{
+    /* MENU FIXO */
+    nav.menu{
+      position:sticky;
+      top:0;
+      z-index:999;
+      background:#111;
+      padding:12px 10px;
       display:flex;
       justify-content:center;
-      gap:10px;
-      margin:20px 0;
+      gap:18px;
+      border-bottom:1px solid #222;
+      box-shadow:0 2px 10px rgba(0,0,0,0.4);
     }
-    .lang-btn{
-      padding:8px 12px;
-      border-radius:10px;
-      border:1px solid #ccc;
-      background:white;
-      cursor:pointer;
-      font-weight:600;
-      box-shadow:0 4px 10px rgba(0,0,0,0.05);
-    }
-    .lang-btn.active{
-      background:var(--primary);
+    nav.menu a{
       color:white;
-      border-color:var(--primary);
+      text-decoration:none;
+      font-weight:bold;
+      padding:8px 10px;
+      border-radius:6px;
+    }
+    nav.menu a:hover{
+      background:rgba(255,255,255,0.1);
+    }
+
+    h1{
+      margin-top:20px;
+      font-size:28px;
+      color:var(--accent);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      margin-top:20px;
     }
 
     .card{
       background:var(--card);
-      padding:var(--pad);
+      padding:14px;
       border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      margin-bottom:20px;
-    }
-    .card img{
-      width:100%;
-      height:auto;
-      border-radius:var(--radius);
-      margin-bottom:12px;
     }
 
-    .cta{
-      display:inline-block;
-      background:var(--accent);
-      color:white;
-      padding:12px 18px;
+    .card img{
+      width:100%;
+      height:150px;
+      object-fit:cover;
       border-radius:10px;
-      text-decoration:none;
-      font-weight:600;
-      margin-top:10px;
+    }
+
+    .card h3{
+      margin:10px 0 4px;
     }
 
     footer{
+      margin-top:26px;
+      padding:20px;
       text-align:center;
       color:var(--muted);
-      margin-top:30px;
-      margin-bottom:20px;
-      font-size:14px;
+    }
+
+    @media(max-width:720px){
+      .grid{
+        grid-template-columns:1fr;
+      }
     }
   </style>
 </head>
 
 <body>
-  <!-- MENU SUPERIOR -->
-<nav style="
-    background: #004aad;
-    padding: 12px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    font-size: 18px;
-">
-    <a href="index.html" style="color:white; text-decoration:none; font-weight:bold;">Início</a>
-    <a href="destinos.html" style="color:white; text-decoration:none; font-weight:bold;">Destinos</a>
-    <a href="blog.html" style="color:white; text-decoration:none; font-weight:bold;">Blog</a>
-    <a href="contato.html" style="color:white; text-decoration:none; font-weight:bold;">Contato</a>
+
+<!-- MENU FIXO -->
+<nav class="menu">
+  <a href="index.html">Início</a>
+  <a href="destinos.html">Destinos</a>
+  <a href="blog.html">Blog</a>
+  <a href="contato.html">Contato</a>
 </nav>
-<header id="title">Destinos Históricos</header>
 
-<div class="container">
+<div class="wrap">
 
-  <!-- SELETOR DE IDIOMA -->
-  <div class="lang-row">
-    <button class="lang-btn" data-lang="pt">🇧🇷 PT</button>
-    <button class="lang-btn" data-lang="en">🇺🇸 EN</button>
-    <button class="lang-btn" data-lang="es">🇪🇸 ES</button>
-  </div>
+<h1>🌍 Destinos — Brasil & Mundo</h1>
 
-  <!-- DESTINO 1 -->
-  <div class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Morro_do_Pai_Inacio.jpg">
-    <h2 id="d1-title">Chapada Diamantina — BA</h2>
-    <p id="d1-text">
-      Um dos destinos naturais mais impressionantes do Brasil, repleto de trilhas, cachoeiras e cavernas.
-    </p>
-    <a class="cta" href="https://wa.me/5511914928585" target="_blank" id="d1-btn">Falar no WhatsApp</a>
-  </div>
+<section class="grid">
 
-  <!-- DESTINO 2 -->
-  <div class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Ouro_Preto.jpg">
-    <h2 id="d2-title">Ouro Preto — MG</h2>
-    <p id="d2-text">
-      Cidade histórica colonial com arquitetura barroca, igrejas icônicas e ruas de pedra.
-    </p>
-    <a class="cta" href="https://wa.me/5511914928585" target="_blank" id="d2-btn">Falar no WhatsApp</a>
-  </div>
+  <article class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Chapada_Diamantina_-_Vale_do_Pati.jpg">
+    <h3>Chapada Diamantina (BA)</h3>
+    <p>Um dos lugares mais lindos do Brasil, trilhas e natureza viva.</p>
+  </article>
 
-  <!-- DESTINO 3 -->
-  <div class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Paraty_-_Rio_de_Janeiro.jpg">
-    <h2 id="d3-title">Paraty — RJ</h2>
-    <p id="d3-text">
-      Centro histórico preservado, praias paradisíacas e cultura vibrante.
-    </p>
-    <a class="cta" href="https://wa.me/5511914928585" target="_blank" id="d3-btn">Falar no WhatsApp</a>
-  </div>
+  <article class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Cristo_Redentor_-_Rio.jpg">
+    <h3>Rio de Janeiro (RJ)</h3>
+    <p>Cartões-postais, praias, cultura e história.</p>
+  </article>
 
-  <footer id="footer">© 2025 — Brasil & Mundo Turismo Histórico</footer>
+  <article class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/2014_Foz_do_Iguacu_-_Cataratas.jpg">
+    <h3>Foz do Iguaçu (PR)</h3>
+    <p>Cataratas, fronteira e diversidade.</p>
+  </article>
+
+  <article class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Centro_Hist%C3%B3rico_de_Paraty.jpg">
+    <h3>Paraty (RJ)</h3>
+    <p>Cidade colonial preservada, história e natureza.</p>
+  </article>
+
+  <article class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/São_Paulo_skyline.jpg">
+    <h3>São Paulo (SP)</h3>
+    <p>Cultura, gastronomia e vida urbana intensa.</p>
+  </article>
+
+  <article class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Salvador_Bahia.jpg">
+    <h3>Salvador (BA)</h3>
+    <p>História, música, energia e tradições únicas.</p>
+  </article>
+
+</section>
+
+<footer>
+  © 2025 Brasil & Mundo — Criado por Rosângela Passos ✨
+</footer>
+
 </div>
-
-<script>
-const t = {
-  pt:{
-    pageTitle:"Destinos Históricos",
-    d1:{ t:"Chapada Diamantina — BA", p:"Um dos destinos naturais mais impressionantes do Brasil, repleto de trilhas, cachoeiras e cavernas.", b:"Falar no WhatsApp" },
-    d2:{ t:"Ouro Preto — MG", p:"Cidade histórica colonial com arquitetura barroca, igrejas icônicas e ruas de pedra.", b:"Falar no WhatsApp" },
-    d3:{ t:"Paraty — RJ", p:"Centro histórico preservado, praias paradisíacas e cultura vibrante.", b:"Falar no WhatsApp" },
-    footer:"© 2025 — Brasil & Mundo Turismo Histórico"
-  },
-  en:{
-    pageTitle:"Historical Destinations",
-    d1:{ t:"Chapada Diamantina — Bahia", p:"One of Brazil’s most impressive natural destinations, full of trails, waterfalls, and caves.", b:"Chat on WhatsApp" },
-    d2:{ t:"Ouro Preto — Minas Gerais", p:"Colonial city with baroque architecture, iconic churches, and stone streets.", b:"Chat on WhatsApp" },
-    d3:{ t:"Paraty — Rio de Janeiro", p:"Preserved historic center, beaches and vibrant culture.", b:"Chat on WhatsApp" },
-    footer:"© 2025 — Brazil & World Historical Tourism"
-  },
-  es:{
-    pageTitle:"Destinos Históricos",
-    d1:{ t:"Chapada Diamantina — Bahía", p:"Uno de los destinos naturales más impresionantes de Brasil, lleno de senderos, cascadas y cuevas.", b:"Hablar por WhatsApp" },
-    d2:{ t:"Ouro Preto — Minas Gerais", p:"Ciudad colonial con arquitectura barroca, iglesias icónicas y calles de piedra.", b:"Hablar por WhatsApp" },
-    d3:{ t:"Paraty — Río de Janeiro", p:"Centro histórico preservado, playas y cultura vibrante.", b:"Hablar por WhatsApp" },
-    footer:"© 2025 — Brasil & Mundo Turismo Histórico"
-  }
-};
-
-function aplicar(lang){
-  document.getElementById("title").textContent = t[lang].pageTitle;
-
-  document.getElementById("d1-title").textContent = t[lang].d1.t;
-  document.getElementById("d1-text").textContent = t[lang].d1.p;
-  document.getElementById("d1-btn").textContent  = t[lang].d1.b;
-
-  document.getElementById("d2-title").textContent = t[lang].d2.t;
-  document.getElementById("d2-text").textContent = t[lang].d2.p;
-  document.getElementById("d2-btn").textContent  = t[lang].d2.b;
-
-  document.getElementById("d3-title").textContent = t[lang].d3.t;
-  document.getElementById("d3-text").textContent = t[lang].d3.p;
-  document.getElementById("d3-btn").textContent  = t[lang].d3.b;
-
-  document.getElementById("footer").textContent = t[lang].footer;
-
-  document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
-  document.querySelector(`[data-lang="${lang}"]`).classList.add("active");
-}
-
-document.querySelectorAll(".lang-btn").forEach(btn=>{
-  btn.onclick = ()=> aplicar(btn.dataset.lang);
-});
-
-aplicar("pt");
-</script>
-
 </body>
 </html>
