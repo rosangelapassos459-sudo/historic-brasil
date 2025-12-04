@@ -3,185 +3,118 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Brasil & Mundo — Turismo Histórico</title>
-  <meta name="description" content="Guias, destinos, experiências e turismo histórico pelo Brasil e pelo Mundo.">
-  <meta name="keywords" content="Turismo, Brasil, viagens, destinos, turismo histórico, roteiros, mundo">
-  <meta name="author" content="Rosângela Passos">
-
+  <title>Brasil & Mundo – Turismo Histórico</title>
+  <meta name="description" content="Destinos históricos, culturais e turísticos do Brasil e do mundo.">
   <style>
-    :root{
-      --bg:#0a0a0a;
-      --card:#101010;
-      --text:#f2f2f2;
-      --muted:#bdbdbd;
-      --accent:#ffcc33;
-      --accent2:#e6b82e;
-      --radius:14px;
-      --maxw:1100px;
+    body {
+      margin: 0;
+      background: #111;
+      color: #eee;
+      font-family: Arial, sans-serif;
     }
 
-    html, body{
-      margin:0;
-      padding:0;
-      background:#000;
-      font-family:Arial, Helvetica, sans-serif;
-      color:var(--text);
+    .menu {
+      background: #000;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
-    .wrap{
-      max-width:var(--maxw);
-      margin:0 auto;
-      padding:16px;
+    .menu a {
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 18px;
     }
 
-    /* MENU FIXO */
-    nav.menu{
-      position:sticky;
-      top:0;
-      z-index:999;
-      background:#111;
-      padding:12px 10px;
-      display:flex;
-      gap:18px;
-      justify-content:center;
-      border-bottom:1px solid #222;
-      box-shadow:0 2px 10px rgba(0,0,0,0.4);
-    }
-    nav.menu a{
-      color:white;
-      text-decoration:none;
-      font-weight:bold;
-      padding:6px 10px;
-      border-radius:6px;
-    }
-    nav.menu a:hover{
-      background:rgba(255,255,255,0.1);
+    h1, h2 {
+      color: #ffd700;
     }
 
-    header{
-      padding:20px 0;
-      text-align:center;
-    }
-
-    header h1{
-      font-size:28px;
-      margin:0;
-      color:var(--accent);
-    }
-
-    header p{
-      margin:6px 0 0;
-      color:var(--muted);
-    }
-
-    .hero{
-      background:var(--card);
-      padding:20px;
-      border-radius:var(--radius);
-      margin-bottom:20px;
-      text-align:center;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:14px;
-      margin-top:20px;
-    }
-
-    .card{
-      background:var(--card);
-      padding:14px;
-      border-radius:var(--radius);
-    }
-
-    .card img{
-      width:100%;
-      height:150px;
-      object-fit:cover;
-      border-radius:10px;
-    }
-
-    .card h3{
-      margin:10px 0 4px;
-    }
-
-    footer{
-      margin-top:26px;
-      padding:20px;
-      text-align:center;
-      color:var(--muted);
-    }
-
-    /* Responsivo */
-    @media(max-width:720px){
-      .grid{
-        grid-template-columns:1fr;
-      }
-      nav.menu{
-        flex-wrap:wrap;
-      }
+    .container {
+      padding: 20px;
     }
   </style>
 
-  <script>
-    // Sistema simples de idioma
-    function lang(l){
-      document.documentElement.lang = l;
-    }
-  </script>
 </head>
 
 <body>
 
-<!-- MENU FIXO -->
-<nav class="menu">
-  <a href="index.html">Início</a>
-  <a href="destinos.html">Destinos</a>
-  <a href="blog.html">Blog</a>
-  <a href="contato.html">Contato</a>
-</nav>
+  <!-- MENU FIXO -->
+  <nav class="menu">
+    <a href="index.html">Início</a>
+    <a href="destinos.html">Destinos</a>
+    <a href="blog.html">Blog</a>
+    <a href="contato.html">Contato</a>
+  </nav>
 
-<div class="wrap">
+  <!-- OFERTAS MAGALU -->
+  <section style="background:#fff;color:#000;padding:20px;border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2); margin:20px;">
 
-<header>
-  <h1>Brasil & Mundo — Turismo Histórico</h1>
-  <p>Descubra lugares incríveis no Brasil e no mundo 🌍</p>
-</header>
+    <h2 style="color:#0b66c3;margin-bottom:10px;">🔥 Ofertas do Dia — Magalu</h2>
+    <p style="margin-bottom:18px;">Promoções reais de acessórios para celular com entrega rápida!</p>
 
-<section class="hero">
-  <h2>Destaques para você</h2>
-  <p>Explore culturas, paisagens, histórias e roteiros inesquecíveis.</p>
-</section>
+    <div style="display:flex;gap:15px;flex-wrap:wrap;">
 
-<section class="grid">
+      <!-- PRODUTO 1 -->
+      <div style="background:#f3f6fb;padding:12px;border-radius:10px;width:30%;min-width:180px;">
+        <img src="https://via.placeholder.com/300x200?text=Fone+Bluetooth" style="width:100%;border-radius:8px;">
+        <h3>Fone Bluetooth</h3>
+        <p style="color:#e53935;font-weight:bold;">R$ 59,90</p>
+        <a href="https://www.magazinevoce.com.br/magazineblessed7/" 
+        target="_blank" style="background:#0b66c3;color:#fff;padding:8px;
+        display:block;text-align:center;border-radius:8px;text-decoration:none;">
+          Comprar no Magalu
+        </a>
+      </div>
 
-  <article class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Chapada_Diamantina_-_Vale_do_Pati.jpg">
-    <h3>Chapada Diamantina</h3>
-    <p>Natureza viva, trilhas e vistas únicas.</p>
-  </article>
+      <!-- PRODUTO 2 -->
+      <div style="background:#f3f6fb;padding:12px;border-radius:10px;width:30%;min-width:180px;">
+        <img src="https://via.placeholder.com/300x200?text=Carregador+Turbo" style="width:100%;border-radius:8px;">
+        <h3>Carregador Turbo</h3>
+        <p style="color:#e53935;font-weight:bold;">R$ 39,90</p>
+        <a href="https://www.magazinevoce.com.br/magazineblessed7/" 
+        target="_blank" style="background:#0b66c3;color:#fff;padding:8px;
+        display:block;text-align:center;border-radius:8px;text-decoration:none;">
+          Comprar no Magalu
+        </a>
+      </div>
 
-  <article class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Cristo_Redentor_-_Rio.jpg">
-    <h3>Rio de Janeiro</h3>
-    <p>Belezas naturais e cartões-postais.</p>
-  </article>
+      <!-- PRODUTO 3 -->
+      <div style="background:#f3f6fb;padding:12px;border-radius:10px;width:30%;min-width:180px;">
+        <img src="https://via.placeholder.com/300x200?text=Suporte+Veicular" style="width:100%;border-radius:8px;">
+        <h3>Suporte Veicular</h3>
+        <p style="color:#e53935;font-weight:bold;">R$ 29,90</p>
+        <a href="https://www.magazinevoce.com.br/magazineblessed7/" 
+        target="_blank" style="background:#0b66c3;color:#fff;padding:8px;
+        display:block;text-align:center;border-radius:8px;text-decoration:none;">
+          Comprar no Magalu
+        </a>
+      </div>
 
-  <article class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/2014_Foz_do_Iguacu_-_Cataratas.jpg">
-    <h3>Foz do Iguaçu</h3>
-    <p>Uma das maravilhas do mundo moderno.</p>
-  </article>
+    </div>
+  </section>
 
-</section>
+  <!-- CONTEÚDO PRINCIPAL -->
+  <div class="container">
+    <h1>Bem-vindo ao Brasil & Mundo Turismo Histórico</h1>
+    <p>Veja destinos incríveis, viagens culturais e experiências únicas pelo Brasil e pelo mundo!</p>
+  </div>
 
-<footer>
-  © 2025 Brasil & Mundo — Criado por Rosângela Passos ✨
-</footer>
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a href="https://wa.me/5511914928585" target="_blank" 
+     style="position:fixed; bottom:20px; right:20px; 
+     background:#25D366; color:#fff; padding:14px 20px; 
+     border-radius:50px; font-size:16px;
+     box-shadow:0 4px 12px rgba(0,0,0,0.3);
+     text-decoration:none; z-index:999;">
+     💬 Fale comigo no WhatsApp
+  </a>
 
-</div>
 </body>
 </html>
-
-
