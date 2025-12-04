@@ -8,124 +8,122 @@
     <style>
         body {
             margin: 0;
-            padding: 0;
             font-family: Arial, sans-serif;
             background: #f5f6fa;
             color: #333;
         }
 
-        header {
-            background: #0057ff;
-            padding: 20px;
-            text-align: center;
+        /* MENU FIXO */
+        nav {
+            background: #004aad;
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 18px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+        }
+
+        nav a {
             color: white;
-            font-size: 24px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Espaço para não esconder conteúdo */
+        .spacer {
+            height: 70px;
+        }
+
+        header {
+            text-align: center;
+            font-size: 28px;
+            margin-top: 20px;
             font-weight: bold;
         }
 
         .language {
-            margin-top: 10px;
             text-align: center;
+            margin-top: 20px;
         }
 
         .language button {
-            background: white;
-            border: 1px solid #0057ff;
-            color: #0057ff;
             padding: 8px 16px;
             margin: 5px;
-            border-radius: 8px;
-            font-weight: bold;
+            background: #004aad;
+            color: white;
+            border: none;
+            border-radius: 6px;
             cursor: pointer;
         }
 
         .post {
             background: white;
-            margin: 20px;
+            margin: 20px auto;
             padding: 20px;
+            width: 90%;
+            max-width: 800px;
             border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         footer {
             text-align: center;
-            padding: 20px;
             margin-top: 40px;
-            color: #555;
+            padding: 20px;
+            color: #666;
         }
     </style>
 
     <script>
         function trocarIdioma(idioma) {
             document.querySelectorAll("[data-pt]").forEach(el => {
-                el.innerText = el.getAttribute("data-" + idioma);
+                el.innerHTML = el.getAttribute("data-" + idioma);
             });
         }
     </script>
 </head>
 
 <body>
-<!-- MENU SUPERIOR -->
-<nav style="
-    background: #004aad;
-    padding: 12px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    font-size: 18px;
-">
-    <a href="index.html" style="color:white; text-decoration:none; font-weight:bold;">Início</a>
-    <a href="destinos.html" style="color:white; text-decoration:none; font-weight:bold;">Destinos</a>
-    <a href="blog.html" style="color:white; text-decoration:none; font-weight:bold;">Blog</a>
-    <a href="contato.html" style="color:white; text-decoration:none; font-weight:bold;">Contato</a>
-</nav>
-<header data-pt="Blog – Brasil & Mundo Turismo Histórico"
+
+    <!-- MENU SUPERIOR FIXO -->
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="destinos.html">Destinos</a>
+        <a href="blog.html">Blog</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+
+    <div class="spacer"></div>
+
+    <header 
+        data-pt="Blog – Brasil & Mundo Turismo Histórico"
         data-en="Blog – Brazil & World Historical Tourism"
         data-es="Blog – Brasil y Mundo Turismo Histórico">
-    Blog – Brasil & Mundo Turismo Histórico
-</header>
+        Blog – Brasil & Mundo Turismo Histórico
+    </header>
 
-<div class="language">
-    <button onclick="trocarIdioma('pt')">🇧🇷 PT</button>
-    <button onclick="trocarIdioma('en')">🇺🇸 EN</button>
-    <button onclick="trocarIdioma('es')">🇪🇸 ES</button>
-</div>
+    <div class="language">
+        <button onclick="trocarIdioma('pt')">🇧🇷 Português</button>
+        <button onclick="trocarIdioma('en')">🇺🇸 English</button>
+        <button onclick="trocarIdioma('es')">🇪🇸 Español</button>
+    </div>
 
-<!-- MODELO DE POST 1 -->
-<div class="post">
-    <h2 data-pt="Conheça as Sete Maravilhas do Brasil"
-        data-en="Discover the Seven Wonders of Brazil"
-        data-es="Conoce las Siete Maravillas de Brasil">
-        Conheça as Sete Maravilhas do Brasil
-    </h2>
+    <div class="post" 
+        data-pt="<h2>Primeira matéria do Blog</h2><p>Em breve grandes conteúdos históricos, culturais e turísticos!</p>"
+        data-en="<h2>First Blog Article</h2><p>Soon amazing historical, cultural and tourism content!</p>"
+        data-es="<h2>Primer Artículo del Blog</h2><p>¡Pronto grandes contenidos históricos, culturales y turísticos!</p>">
+        <h2>Primeira matéria do Blog</h2>
+        <p>Em breve grandes conteúdos históricos, culturais e turísticos!</p>
+    </div>
 
-    <p data-pt="Uma seleção dos lugares mais impressionantes do país para você visitar."
-       data-en="A selection of the most impressive places in Brazil for you to visit."
-       data-es="Una selección de los lugares más impresionantes de Brasil para que los visites.">
-       Uma seleção dos lugares mais impressionantes do país para você visitar.
-    </p>
-</div>
-
-<!-- MODELO DE POST 2 -->
-<div class="post">
-    <h2 data-pt="Roteiro Histórico de Ouro Preto"
-        data-en="Historical Route of Ouro Preto"
-        data-es="Ruta Histórica de Ouro Preto">
-        Roteiro Histórico de Ouro Preto
-    </h2>
-
-    <p data-pt="Descubra a cidade que preserva a alma da história brasileira."
-       data-en="Discover the city that preserves the soul of Brazilian history."
-       data-es="Descubre la ciudad que preserva el alma de la historia brasileña.">
-       Descubra a cidade que preserva a alma da história brasileira.
-    </p>
-</div>
-
-<footer data-pt="© 2025 — Brasil & Mundo Turismo Histórico"
-        data-en="© 2025 — Brazil & World Historical Tourism"
-        data-es="© 2025 — Brasil y Mundo Turismo Histórico">
-    © 2025 — Brasil & Mundo Turismo Histórico
-</footer>
+    <footer>
+        © 2025 • Brasil & Mundo Turismo Histórico
+    </footer>
 
 </body>
-</html>
+        </html>
