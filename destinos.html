@@ -1,77 +1,232 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Destinos Históricos</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Destinos Históricos — Brasil & Mundo</title>
 
-    <style>
-        body {
-            margin: 0;
-            background: #f5f6fa;
-            font-family: Arial, sans-serif;
-            color: #333;
-        }
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f6fa;
+      color: #333;
+    }
 
-        header {
-            background: #0057d9;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 22px;
-            font-weight: bold;
-        }
+    header {
+      background: #0066ff;
+      color: white;
+      padding: 18px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+    }
 
-        .section {
-            background: white;
-            padding: 20px;
-            margin: 15px;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
+    .language-selector {
+      display: flex;
+      gap: 10px;
+      padding: 12px;
+      justify-content: center;
+      background: #f0f2f5;
+      border-bottom: 1px solid #ddd;
+    }
 
-        h2 {
-            margin-top: 0;
-        }
+    .language-selector button {
+      font-size: 15px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      background: #fff;
+      box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    }
 
-        .button {
-            display: inline-block;
-            background: #0057d9;
-            color: white;
-            padding: 10px 18px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 10px;
-        }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #666;
-            margin-top: 40px;
-        }
-    </style>
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 16px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #0066ff;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 22px;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-    🌎 Destinos Históricos
-</header>
+  <!-- Seletor de Idioma -->
+  <div class="language-selector">
+    <button onclick="setLanguage('pt')">🇧🇷 PT</button>
+    <button onclick="setLanguage('en')">🇺🇸 EN</button>
+    <button onclick="setLanguage('es')">🇪🇸 ES</button>
+  </div>
 
-<div class="section">
-    <h2>Em construção 🚧</h2>
-    <p>Estamos preparando conteúdos especiais sobre os melhores pontos históricos do Brasil e do mundo.</p>
-</div>
+  <header data-pt="🌎 Destinos Históricos"
+          data-en="🌎 Historical Destinations"
+          data-es="🌎 Destinos Históricos"></header>
 
-<div class="section">
-    <h2>Voltar</h2>
-    <a class="button" href="index.html">⬅️ Voltar para o início</a>
-</div>
+  <div class="container">
+    <h2 data-pt="Descubra lugares incríveis!"
+        data-en="Discover incredible places!"
+        data-es="¡Descubre lugares increíbles!"></h2>
 
-<footer>
-    © 2025 — Brasil & Mundo Turismo Histórico
-</footer>
+    <div class="grid">
+
+      <!-- Ouro Preto -->
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Ouro_Preto_-_MG.jpg" alt="Ouro Preto">
+        <div class="card-content">
+          <h3 data-pt="Ouro Preto, Minas Gerais"
+              data-en="Ouro Preto, Minas Gerais"
+              data-es="Ouro Preto, Minas Gerais"></h3>
+          <p data-pt="A antiga capital de Minas, repleta de igrejas barrocas e história viva."
+             data-en="The old capital of Minas, full of baroque churches and living history."
+             data-es="La antigua capital de Minas, llena de iglesias barrocas e historia viva."></p>
+        </div>
+      </div>
+
+      <!-- Salvador -->
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Pelourinho_Salvador_Bahia_Brazil.jpg" alt="Salvador">
+        <div class="card-content">
+          <h3 data-pt="Salvador, Bahia"
+              data-en="Salvador, Bahia"
+              data-es="Salvador, Bahía"></h3>
+          <p data-pt="Cultura, cores e o Pelourinho: o berço da primeira capital do Brasil."
+             data-en="Culture, colors and Pelourinho: the birthplace of Brazil's first capital."
+             data-es="Cultura, colores y Pelourinho: la cuna de la primera capital de Brasil."></p>
+        </div>
+      </div>
+
+      <!-- Paraty -->
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Paraty_-_RJ_-_Brasil_%2820798236373%29.jpg" alt="Paraty">
+        <div class="card-content">
+          <h3 data-pt="Paraty, Rio de Janeiro"
+              data-en="Paraty, Rio de Janeiro"
+              data-es="Paraty, Río de Janeiro"></h3>
+          <p data-pt="Centro histórico colonial preservado, charme e mar azul cristalino."
+             data-en="Preserved colonial center, charm and crystal blue sea."
+             data-es="Centro colonial preservado, encanto y mar azul cristalino."></p>
+        </div>
+      </div>
+
+      <!-- Chapada Diamantina -->
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Morro_do_Pai_Inácio_-_Chapada_Diamantina.jpg" alt="Chapada Diamantina">
+        <div class="card-content">
+          <h3 data-pt="Chapada Diamantina, Bahia"
+              data-en="Chapada Diamantina, Bahia"
+              data-es="Chapada Diamantina, Bahía"></h3>
+          <p data-pt="Cachoeiras, trilhas e vistas que parecem pinturas. Um paraíso natural."
+             data-en="Waterfalls, trails and views that look like paintings. A natural paradise."
+             data-es="Cataratas, senderos y vistas que parecen pinturas. Un paraíso natural."></p>
+        </div>
+      </div>
+
+      <!-- Petrópolis -->
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Cathedral_Petropolis.jpg" alt="Petrópolis">
+        <div class="card-content">
+          <h3 data-pt="Petrópolis, Rio de Janeiro"
+              data-en="Petrópolis, Rio de Janeiro"
+              data-es="Petrópolis, Río de Janeiro"></h3>
+          <p data-pt="A cidade imperial com palácios e jardins reais no coração da serra."
+             data-en="The imperial city with palaces and royal gardens in the mountains."
+             data-es="La ciudad imperial con palacios y jardines reales en la sierra."></p>
+        </div>
+      </div>
+
+      <!-- Lisboa -->
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Lisbon_Beira_Alt_View.jpg" alt="Lisboa">
+        <div class="card-content">
+          <h3 data-pt="Lisboa, Portugal"
+              data-en="Lisbon, Portugal"
+              data-es="Lisboa, Portugal"></h3>
+          <p data-pt="História, azulejos e o charme europeu da antiga metrópole portuguesa."
+             data-en="History, tiles and European charm of the old Portuguese metropolis."
+             data-es="Historia, azulejos y encanto europeo de la antigua metrópolis portuguesa."></p>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top:30px;">
+      <a href="index.html" class="btn"
+         data-pt="⬅ Voltar ao Início"
+         data-en="⬅ Back to Home"
+         data-es="⬅ Volver al Inicio"></a>
+    </div>
+  </div>
+
+  <footer data-pt="© 2025 — Brasil & Mundo Turismo Histórico"
+          data-en="© 2025 — Brazil & World Historical Tourism"
+          data-es="© 2025 — Brasil & Mundo Turismo Histórico"></footer>
+
+  <script>
+    function setLanguage(lang) {
+      localStorage.setItem("siteLang", lang);
+      updateLanguage();
+    }
+
+    function updateLanguage() {
+      const lang = localStorage.getItem("siteLang") || "pt";
+      document.querySelectorAll("[data-pt]").forEach(el => {
+        el.innerHTML = el.getAttribute(`data-${lang}`);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", updateLanguage);
+  </script>
 
 </body>
-</html>
+            </html>
