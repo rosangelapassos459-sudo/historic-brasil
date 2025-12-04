@@ -3,108 +3,148 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brasil & Mundo – Turismo Histórico</title>
+  <title>Brasil & Mundo — Turismo Histórico</title>
 
-  <!-- Manifesto do app -->
-  <link rel="manifest" href="manifest.json" />
-
-  <!-- Estilos -->
   <style>
-    :root {
-      --bg: #f5f6fa;
-      --text: #333;
-      --primary: #004aad;
-      --secondary: #0077ff;
-      --muted: #666;
-    }
-
     body {
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      background: #f5f6fa;
+      color: #333;
     }
 
+    /* ===== HEADER ===== */
     header {
-      background: var(--primary);
+      background: #0066ff;
       color: white;
-      padding: 20px;
+      padding: 18px;
       text-align: center;
       font-size: 22px;
       font-weight: bold;
     }
 
-    .section {
-      padding: 20px;
-      margin: 15px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    /* ===== LANGUAGE SELECTOR ===== */
+    .language-selector {
+      display: flex;
+      gap: 10px;
+      padding: 12px;
+      justify-content: center;
+      background: #f0f2f5;
+      border-bottom: 1px solid #ddd;
+    }
+    .language-selector button {
+      font-size: 15px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      background: #fff;
+      box-shadow: 0 0 6px rgba(0,0,0,0.1);
     }
 
-    .button {
+    /* ===== MAIN CONTAINER ===== */
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      background: #0066ff;
+      padding: 12px 20px;
       display: inline-block;
-      background: var(--secondary);
+      border-radius: 10px;
       color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
       text-decoration: none;
-      font-weight: bold;
+      font-size: 16px;
       margin-top: 10px;
-      text-align: center;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      margin-top: 30px;
-      color: var(--muted);
+      padding: 22px;
       font-size: 14px;
+      color: #666;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- LOGO AQUI -->
-  <img src="7776.jpg" alt="Logotipo BM" style="width: 200px; display: block; margin: 0 auto;">
+  <!-- Seleção de Idioma -->
+  <div class="language-selector">
+    <button onclick="setLanguage('pt')">🇧🇷 PT</button>
+    <button onclick="setLanguage('en')">🇺🇸 EN</button>
+    <button onclick="setLanguage('es')">🇪🇸 ES</button>
+  </div>
 
-  <header>
-    🇧🇷 Brasil & Mundo — Turismo Histórico
+  <!-- HEADER -->
+  <header data-pt="🌎 Brasil & Mundo — Turismo Histórico"
+          data-en="🌎 Brazil & World — Historical Tourism"
+          data-es="🌎 Brasil & Mundo — Turismo Histórico">
   </header>
 
-  <div class="section">
-    <h2>🌍 Bem-vindo!</h2>
-    <a class="button" href="destinos.html">
-    Explorar destinos
-    </a>
-    <a class="button" 
-   href="https://wa.me/5511914928585?text=Ol%C3%A1!%20👋%20Encontrei%20seu%20site%20Brasil%20%26%20Mundo%20%E2%80%93%20Turismo%20Hist%C3%B3rico%20e%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es."
-   target="_blank">
-   Falar no WhatsApp
-    </a>
+  <!-- MAIN CONTENT -->
+  <div class="container">
+
+    <div class="card">
+      <h2 data-pt="Bem-vindo(a)!"
+          data-en="Welcome!"
+          data-es="¡Bienvenido(a)!"></h2>
+
+      <p data-pt="Descubra destinos históricos incríveis no Brasil e ao redor do mundo."
+         data-en="Discover amazing historical destinations in Brazil and around the world."
+         data-es="Descubre increíbles destinos históricos en Brasil y en todo el mundo."></p>
+
+      <a href="destinos.html" class="btn"
+         data-pt="Explorar Destinos"
+         data-en="Explore Destinations"
+         data-es="Explorar Destinos"></a>
+    </div>
+
+    <div class="card">
+      <h3 data-pt="Conteúdos em Destaque"
+          data-en="Featured Content"
+          data-es="Contenido Destacado"></h3>
+
+      <p data-pt="Guia completo de turismo histórico, trilhas, cultura e experiências."
+         data-en="Complete guide to historical tourism, trails, culture and experiences."
+         data-es="Guía completa de turismo histórico, senderos, cultura y experiencias."></p>
+    </div>
+
   </div>
 
-  <div class="section">
-    <h2>🏛️ Pontos Históricos</h2>
-    <p>Os conteúdos e destinos serão adicionados diariamente.</p>
-  </div>
-
-  <div class="section">
-    <h2>📞 Contato</h2>
-    <p>Clique abaixo para falar com a gente:</p>
-    <a class="butt
-  </div>
-
-  <footer>
-    © 2025 — Brasil & Mundo Turismo
+  <!-- FOOTER -->
+  <footer data-pt="© 2025 — Brasil & Mundo Turismo Histórico"
+          data-en="© 2025 — Brazil & World Historical Tourism"
+          data-es="© 2025 — Brasil & Mundo Turismo Histórico">
   </footer>
+
+  <!-- LANGUAGE SCRIPT -->
+  <script>
+    function setLanguage(lang) {
+      localStorage.setItem("siteLang", lang);
+      updateLanguage();
+    }
+
+    function updateLanguage() {
+      const lang = localStorage.getItem("siteLang") || "pt";
+      document.querySelectorAll("[data-pt]").forEach(el => {
+        el.innerHTML = el.getAttribute(`data-${lang}`);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", updateLanguage);
+  </script>
 
 </body>
 </html>
-
-
-
-
-
