@@ -1,164 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Destinos — Brasil & Mundo Turismo</title>
-  <meta name="description" content="Destinos nacionais e internacionais — turismo histórico, natureza e cultura.">
-  <meta name="keywords" content="destinos, viagens, turismo, Brasil, mundo, pontos turísticos">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destinos - Brasil & Mundo</title>
 
   <style>
-    :root{
-      --bg:#0a0a0a;
-      --card:#101010;
-      --text:#f2f2f2;
-      --muted:#bdbdbd;
-      --accent:#ffcc33;
-      --radius:14px;
-      --maxw:1100px;
+    body {
+      margin: 0;
+      background: #111;
+      color: #eee;
+      font-family: Arial, sans-serif;
     }
 
-    html, body{
-      margin:0;
-      padding:0;
-      font-family:Arial, sans-serif;
-      background:#000;
-      color:var(--text);
+    nav {
+      background: #000;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
     }
 
-    .wrap{
-      max-width:var(--maxw);
-      margin:0 auto;
-      padding:16px;
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-    /* MENU FIXO */
-    nav.menu{
-      position:sticky;
-      top:0;
-      z-index:999;
-      background:#111;
-      padding:12px 10px;
-      display:flex;
-      justify-content:center;
-      gap:18px;
-      border-bottom:1px solid #222;
-      box-shadow:0 2px 10px rgba(0,0,0,0.4);
-    }
-    nav.menu a{
-      color:white;
-      text-decoration:none;
-      font-weight:bold;
-      padding:8px 10px;
-      border-radius:6px;
-    }
-    nav.menu a:hover{
-      background:rgba(255,255,255,0.1);
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 15px;
     }
 
-    h1{
-      margin-top:20px;
-      font-size:28px;
-      color:var(--accent);
+    h1 {
+      color: #f5c542;
+      text-align: center;
     }
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
-      margin-top:20px;
+    .card {
+      background: #1c1c1c;
+      border-radius: 15px;
+      padding: 15px;
+      margin-bottom: 25px;
     }
 
-    .card{
-      background:var(--card);
-      padding:14px;
-      border-radius:var(--radius);
-    }
-
-    .card img{
-      width:100%;
-      height:150px;
-      object-fit:cover;
-      border-radius:10px;
-    }
-
-    .card h3{
-      margin:10px 0 4px;
-    }
-
-    footer{
-      margin-top:26px;
-      padding:20px;
-      text-align:center;
-      color:var(--muted);
-    }
-
-    @media(max-width:720px){
-      .grid{
-        grid-template-columns:1fr;
-      }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
     }
   </style>
 </head>
 
 <body>
 
-<!-- MENU FIXO -->
-<nav class="menu">
+<nav>
   <a href="index.html">Início</a>
   <a href="destinos.html">Destinos</a>
   <a href="blog.html">Blog</a>
   <a href="contato.html">Contato</a>
 </nav>
 
-<div class="wrap">
+<div class="container">
+  <h1>🌍 Destinos</h1>
 
-<h1>🌍 Destinos — Brasil & Mundo</h1>
-
-<section class="grid">
-
-  <article class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Chapada_Diamantina_-_Vale_do_Pati.jpg">
-    <h3>Chapada Diamantina (BA)</h3>
-    <p>Um dos lugares mais lindos do Brasil, trilhas e natureza viva.</p>
-  </article>
-
-  <article class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Cristo_Redentor_-_Rio.jpg">
-    <h3>Rio de Janeiro (RJ)</h3>
-    <p>Cartões-postais, praias, cultura e história.</p>
-  </article>
-
-  <article class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/2014_Foz_do_Iguacu_-_Cataratas.jpg">
-    <h3>Foz do Iguaçu (PR)</h3>
-    <p>Cataratas, fronteira e diversidade.</p>
-  </article>
-
-  <article class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Centro_Hist%C3%B3rico_de_Paraty.jpg">
-    <h3>Paraty (RJ)</h3>
-    <p>Cidade colonial preservada, história e natureza.</p>
-  </article>
-
-  <article class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/São_Paulo_skyline.jpg">
-    <h3>São Paulo (SP)</h3>
-    <p>Cultura, gastronomia e vida urbana intensa.</p>
-  </article>
-
-  <article class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Salvador_Bahia.jpg">
-    <h3>Salvador (BA)</h3>
-    <p>História, música, energia e tradições únicas.</p>
-  </article>
-
-</section>
-
-<footer>
-  © 2025 Brasil & Mundo — Criado por Rosângela Passos ✨
-</footer>
+  <div class="card">
+    <img src="7776.jpg" alt="Chapada Diamantina">
+    <h2>Chapada Diamantina (BA)</h2>
+    <p>Um dos lugares mais lindos do Brasil, com trilhas, cachoeiras e natureza viva.</p>
+  </div>
 
 </div>
+
 </body>
-    </html>
+</html>
