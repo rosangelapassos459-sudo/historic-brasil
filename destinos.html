@@ -2,86 +2,189 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <title>Destinos | Brasil & Mundo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Destinos - Brasil & Mundo</title>
 
   <style>
     body {
       margin: 0;
-      background: #111;
-      color: #eee;
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background: #000;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
     }
 
     nav {
-      background: #000;
-      padding: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
+      background: #111;
+      padding: 10px;
+      text-align: center;
     }
 
     nav a {
       color: #fff;
+      margin: 0 10px;
       text-decoration: none;
       font-weight: bold;
     }
 
+    nav a:hover {
+      text-decoration: underline;
+    }
+
     .container {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 15px;
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      background: #fff;
     }
 
     h1 {
-      color: #f5c542;
       text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 18px;
+    }
+
+    .section {
+      margin-bottom: 50px;
+    }
+
+    .section h2 {
+      border-left: 5px solid #f5c542;
+      padding-left: 10px;
+      margin-bottom: 20px;
     }
 
     .card {
-      background: #1c1c1c;
-      border-radius: 15px;
-      padding: 15px;
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
       margin-bottom: 25px;
     }
 
-    .card img {
-      width: 100%;
-      border-radius: 10px;
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .botao {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 20px;
+      background: #f5c542;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    .botao:hover {
+      background: #e0b534;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #000;
+      color: #fff;
+      margin-top: 40px;
     }
   </style>
 </head>
 
 <body>
 
+<header>
+  <h2>🌍 Brasil & Mundo</h2>
+</header>
+
 <nav>
   <a href="index.html">Início</a>
   <a href="destinos.html">Destinos</a>
   <a href="blog.html">Blog</a>
+  <a href="ofertas.html">Ofertas</a>
   <a href="contato.html">Contato</a>
 </nav>
 
 <div class="container">
-  <h1>🌍 Destinos</h1>
 
-  <div class="card">
-    <img src="7776.jpg" alt="Chapada Diamantina">
-    <h2>Chapada Diamantina (BA)</h2>
-    <p>Um dos lugares mais lindos do Brasil, com trilhas, cachoeiras e natureza viva.</p>
+  <h1>Destinos que inspiram</h1>
+
+  <p class="intro">
+    Do coração do Brasil aos destinos mais desejados do mundo,
+    aqui você encontra lugares que encantam, inspiram e despertam
+    a vontade de viajar.
+  </p>
+
+  <!-- BRASIL -->
+  <div class="section">
+    <h2>🇧🇷 Brasil</h2>
+
+    <div class="card">
+      <h3>🌿 Chapada Diamantina (Bahia)</h3>
+      <p>
+        Um dos destinos naturais mais impressionantes do Brasil.
+        Trilhas, cachoeiras, cânions e paisagens que renovam a alma.
+        Ideal para quem ama natureza, aventura e tranquilidade.
+      </p>
+      <p>
+        A Chapada Diamantina é perfeita tanto para quem busca
+        contato profundo com a natureza quanto para quem deseja
+        experiências únicas e inesquecíveis.
+      </p>
+      <a class="botao" href="ofertas.html">Ver ofertas para essa viagem</a>
+    </div>
+
+    <div class="card">
+      <h3>🏖️ Praias brasileiras</h3>
+      <p>
+        O Brasil é conhecido mundialmente por suas praias paradisíacas.
+        Do Nordeste ao Sul, são destinos ideais para descanso,
+        lazer e conexão com a natureza.
+      </p>
+      <a class="botao" href="ofertas.html">Ver itens para viajar</a>
+    </div>
   </div>
-<a href="ofertas.html" style="
-display:inline-block;
-margin-top:10px;
-padding:10px 16px;
-background:#f5c542;
-color:#000;
-font-weight:bold;
-border-radius:8px;
-text-decoration:none;
-">
-Ver ofertas para essa viagem
-</a>
+
+  <!-- MUNDO -->
+  <div class="section">
+    <h2>🌎 Mundo</h2>
+
+    <div class="card">
+      <h3>🗼 Paris (França)</h3>
+      <p>
+        Conhecida como a cidade da luz, Paris encanta com sua cultura,
+        gastronomia, arquitetura histórica e atmosfera romântica.
+        Um destino clássico para quem ama arte e história.
+      </p>
+      <a class="botao" href="ofertas.html">Ver ofertas para viagem internacional</a>
+    </div>
+
+    <div class="card">
+      <h3>🗽 Nova York (Estados Unidos)</h3>
+      <p>
+        Moderna, vibrante e cheia de possibilidades.
+        Nova York oferece cultura, compras, entretenimento
+        e experiências únicas em cada esquina.
+      </p>
+      <a class="botao" href="ofertas.html">Ver itens para viajar</a>
+    </div>
+  </div>
+
 </div>
 
+<footer>
+  © 2026 — Brasil & Mundo
+</footer>
+
 </body>
-</html>
+  </html>
