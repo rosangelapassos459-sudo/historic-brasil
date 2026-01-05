@@ -2,78 +2,93 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <title>Ofertas para Viagem — Brasil & Mundo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ofertas de Viagem | Brasil & Mundo</title>
 
   <style>
     body {
       margin: 0;
-      background: #111;
-      color: #eee;
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background: #000;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
     }
 
     nav {
-      background: #000;
-      padding: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      background: #111;
+      padding: 10px;
+      text-align: center;
     }
 
     nav a {
       color: #fff;
+      margin: 0 10px;
       text-decoration: none;
       font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
     }
 
     .container {
       max-width: 900px;
-      margin: 30px auto;
-      padding: 15px;
+      margin: auto;
+      padding: 20px;
+      background: #fff;
     }
 
     h1 {
-      color: #f5c542;
-      text-align: center;
+      color: #222;
     }
 
     .offer {
-      background: #1c1c1c;
-      border-radius: 15px;
-      padding: 15px;
-      margin-bottom: 20px;
+      background: #f9f9f9;
+      padding: 20px;
+      margin-top: 25px;
+      border-radius: 8px;
     }
 
     .offer h2 {
-      color: #fff;
+      margin-top: 0;
     }
 
-    .offer p {
-      color: #ccc;
-    }
-
-    .offer a {
+    .botao {
       display: inline-block;
-      margin-top: 10px;
-      padding: 12px 18px;
+      margin-top: 15px;
+      padding: 12px 20px;
       background: #f5c542;
       color: #000;
-      font-weight: bold;
-      border-radius: 8px;
       text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
     }
 
-    .offer a:hover {
-      background: #ffd966;
+    .botao:hover {
+      background: #e0b534;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #000;
+      color: #fff;
+      margin-top: 30px;
     }
   </style>
 </head>
 
 <body>
+
+<header>
+  <h2>💰 Ofertas — Brasil & Mundo</h2>
+</header>
 
 <nav>
   <a href="index.html">Início</a>
@@ -84,49 +99,53 @@
 </nav>
 
 <div class="container">
-  <h1>🛍️ Ofertas de Viagem</h1>
+
+  <h1>Ofertas que ajudam você a viajar melhor</h1>
 
   <p>
-    Produtos selecionados para quem ama viajar, explorar a natureza
-    e viver novas experiências.
+    Viajar bem não é gastar mais — é escolher os produtos certos.
+    Aqui estão ofertas selecionadas para quem ama natureza, trilhas
+    e experiências reais.
   </p>
 
-  <!-- MOCHILAS -->
   <div class="offer">
-    <h2>🎒 Mochilas para trilha e viagem</h2>
+    <h2>🧳 Ofertas gerais para viagem</h2>
     <p>
-      Mochilas confortáveis e resistentes para trilhas, passeios
-      e viagens longas.
+      Produtos práticos para o dia a dia do viajante: mochilas,
+      acessórios, organização e conforto.
     </p>
-    <a href="https://divulgador.magalu.com/scXzY_fp" target="_blank">
+    <a class="botao" href="https://divulgador.magalu.com/scXzY_fp" target="_blank">
       Ver ofertas na Magalu
     </a>
   </div>
 
-  <!-- TENIS -->
   <div class="offer">
-    <h2>👟 Tênis e calçados para caminhada</h2>
+    <h2>👟 Tênis e calçados para explorar</h2>
     <p>
-      Conforto e segurança para explorar a natureza sem preocupações.
+      Conforto e segurança para trilhas, caminhadas longas
+      e viagens cheias de aventura.
     </p>
-    <a href="https://divulgador.magalu.com/JqHv0-aG" target="_blank">
-      Ver ofertas na Magalu
+    <a class="botao" href="https://divulgador.magalu.com/JqHv0-aG" target="_blank">
+      Ver ofertas de calçados
     </a>
   </div>
 
-  <!-- ITENS DE VIAGEM -->
   <div class="offer">
-    <h2>🧴 Itens essenciais para viagem</h2>
+    <h2>🎒 Itens essenciais para viajar</h2>
     <p>
-      Organizadores, garrafas térmicas, acessórios e tudo
-      o que facilita sua viagem.
+      Organizadores, garrafas térmicas, malas e acessórios
+      que facilitam qualquer viagem.
     </p>
-    <a href="https://divulgador.magalu.com/AsL_Mu7t" target="_blank">
-      Ver ofertas na Magalu
+    <a class="botao" href="https://divulgador.magalu.com/AsL_Mu7t" target="_blank">
+      Ver itens de viagem
     </a>
   </div>
 
 </div>
+
+<footer>
+  © 2026 — Brasil & Mundo • Conteúdo com links afiliados
+</footer>
 
 </body>
 </html>
