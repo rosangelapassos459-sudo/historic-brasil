@@ -2,74 +2,89 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <title>Brasil & Mundo — Viagens, Natureza e Experiências</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rosangela – Brasil & Mundo</title>
 
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: #eee;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f4f4;
+      color: #333;
     }
 
-    /* MENU */
-    nav {
+    header {
       background: #000;
+      color: #fff;
       padding: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      position: relative; /* <<< IMPORTANTE */
-      z-index: 1000;      /* <<< IMPORTANTE */
+      text-align: center;
+    }
+
+    nav {
+      background: #111;
+      padding: 10px;
+      text-align: center;
     }
 
     nav a {
       color: #fff;
+      margin: 0 10px;
       text-decoration: none;
       font-weight: bold;
     }
 
     nav a:hover {
-      color: #f5c542;
+      text-decoration: underline;
     }
 
-    /* CONTEÚDO */
     .container {
       max-width: 900px;
-      margin: 30px auto;
-      padding: 15px;
+      margin: auto;
+      padding: 20px;
+      background: #fff;
     }
 
     h1 {
-      color: #f5c542;
+      color: #222;
     }
 
-    /* IMAGEM / LOGO */
-    .hero {
-      text-align: center;
-      margin: 30px 0;
-    }
-
-    .hero img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: auto;
-      position: relative;
-      z-index: 1; /* <<< FICA ATRÁS DO MENU */
-    }
-
-    .section {
-      background: #1c1c1c;
+    .destaque {
+      margin-top: 30px;
       padding: 20px;
-      border-radius: 15px;
+      background: #f9f9f9;
+      border-radius: 8px;
+    }
+
+    .botao {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 20px;
+      background: #f5c542;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    .botao:hover {
+      background: #e0b534;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #000;
+      color: #fff;
       margin-top: 30px;
     }
   </style>
 </head>
 
 <body>
+
+<header>
+  <h2>🌍 Brasil & Mundo</h2>
+</header>
 
 <nav>
   <a href="index.html">Início</a>
@@ -81,32 +96,39 @@
 
 <div class="container">
 
-  <h1>🌍 Rosangela – Brasil & Mundo</h1>
+  <h1>Viagens, natureza e experiências reais</h1>
 
   <p>
-    Viajar é mais do que conhecer lugares — é viver experiências,
-    criar memórias e se reconectar com o que realmente importa.
+    Se você ama natureza, trilhas, cachoeiras e sonha em conhecer
+    lugares incríveis no Brasil e no mundo, você está no lugar certo.
   </p>
 
   <p>
-    Aqui no <strong>Brasil & Mundo</strong>, compartilho destinos incríveis,
-    dicas reais de viagem, curiosidades e oportunidades para você
-    viajar melhor, gastando menos e aproveitando mais.
+    Aqui no <strong>Brasil & Mundo</strong>, compartilho destinos que valem a pena,
+    dicas práticas de viagem e sugestões de produtos que ajudam
+    você a viajar melhor, com mais conforto e menos preocupação.
   </p>
 
-  <div class="hero">
-    <img src="7776.jpg" alt="Brasil & Mundo">
-  </div>
+  <p>
+    Explore, se inspire e descubra como transformar seus sonhos
+    de viagem em experiências reais.
+  </p>
 
-  <div class="section">
+  <div class="destaque">
     <h2>🌿 Destinos em destaque</h2>
     <p>
       Conheça lugares incríveis, trilhas, cachoeiras, cidades encantadoras
       e experiências que valem cada passo da jornada.
     </p>
+
+    <a class="botao" href="destinos.html">Ver destinos</a>
   </div>
 
 </div>
+
+<footer>
+  © 2026 — Brasil & Mundo
+</footer>
 
 </body>
 </html>
