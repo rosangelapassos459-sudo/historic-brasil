@@ -38,7 +38,7 @@
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
       padding: 20px;
       background: #fff;
@@ -67,13 +67,20 @@
 
     .card {
       background: #f9f9f9;
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 25px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    .card h3 {
-      margin-top: 0;
+    .card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
     }
 
     .botao {
@@ -120,9 +127,8 @@
   <h1>Destinos que inspiram</h1>
 
   <p class="intro">
-    Do coração do Brasil aos destinos mais desejados do mundo,
-    aqui você encontra lugares que encantam, inspiram e despertam
-    a vontade de viajar.
+    Do Brasil ao mundo, explore lugares incríveis que despertam
+    emoção, curiosidade e vontade de viajar.
   </p>
 
   <!-- BRASIL -->
@@ -130,28 +136,15 @@
     <h2>🇧🇷 Brasil</h2>
 
     <div class="card">
-      <h3>🌿 Chapada Diamantina (Bahia)</h3>
-      <p>
-        Um dos destinos naturais mais impressionantes do Brasil.
-        Trilhas, cachoeiras, cânions e paisagens que renovam a alma.
-        Ideal para quem ama natureza, aventura e tranquilidade.
-      </p>
-      <p>
-        A Chapada Diamantina é perfeita tanto para quem busca
-        contato profundo com a natureza quanto para quem deseja
-        experiências únicas e inesquecíveis.
-      </p>
-      <a class="botao" href="ofertas.html">Ver ofertas para essa viagem</a>
-    </div>
-
-    <div class="card">
-      <h3>🏖️ Praias brasileiras</h3>
-      <p>
-        O Brasil é conhecido mundialmente por suas praias paradisíacas.
-        Do Nordeste ao Sul, são destinos ideais para descanso,
-        lazer e conexão com a natureza.
-      </p>
-      <a class="botao" href="ofertas.html">Ver itens para viajar</a>
+      <img src="https://images.unsplash.com/photo-1587502537745-84f1b6c8c0b7?auto=format&fit=crop&w=1200&q=80" alt="Chapada Diamantina">
+      <div class="card-content">
+        <h3>🌿 Chapada Diamantina (Bahia)</h3>
+        <p>
+          Um dos destinos naturais mais impressionantes do Brasil.
+          Trilhas, cachoeiras, cânions e paisagens que renovam a alma.
+        </p>
+        <a class="botao" href="ofertas.html">Ver ofertas para essa viagem</a>
+      </div>
     </div>
   </div>
 
@@ -160,23 +153,27 @@
     <h2>🌎 Mundo</h2>
 
     <div class="card">
-      <h3>🗼 Paris (França)</h3>
-      <p>
-        Conhecida como a cidade da luz, Paris encanta com sua cultura,
-        gastronomia, arquitetura histórica e atmosfera romântica.
-        Um destino clássico para quem ama arte e história.
-      </p>
-      <a class="botao" href="ofertas.html">Ver ofertas para viagem internacional</a>
+      <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80" alt="Paris">
+      <div class="card-content">
+        <h3>🗼 Paris (França)</h3>
+        <p>
+          Cultura, gastronomia, história e romance.
+          Um dos destinos mais desejados do mundo.
+        </p>
+        <a class="botao" href="ofertas.html">Ver itens para viagem internacional</a>
+      </div>
     </div>
 
     <div class="card">
-      <h3>🗽 Nova York (Estados Unidos)</h3>
-      <p>
-        Moderna, vibrante e cheia de possibilidades.
-        Nova York oferece cultura, compras, entretenimento
-        e experiências únicas em cada esquina.
-      </p>
-      <a class="botao" href="ofertas.html">Ver itens para viajar</a>
+      <img src="https://images.unsplash.com/photo-1549921296-3fd62a8a1f1c?auto=format&fit=crop&w=1200&q=80" alt="Nova York">
+      <div class="card-content">
+        <h3>🗽 Nova York (Estados Unidos)</h3>
+        <p>
+          Moderna, vibrante e cheia de possibilidades.
+          Uma cidade que nunca dorme.
+        </p>
+        <a class="botao" href="ofertas.html">Ver itens para viajar</a>
+      </div>
     </div>
   </div>
 
@@ -187,4 +184,4 @@
 </footer>
 
 </body>
-  </html>
+</html>
